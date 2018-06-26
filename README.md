@@ -1,7 +1,7 @@
 # CodableExtensions
 ![Swift](http://img.shields.io/badge/swift-4.1-orange.svg)
 [![Swift Package Manager](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-blue.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Cocoapods Compatible](https://img.shields.io/badge/Cocoapods-compatible-blue.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![License](http://img.shields.io/badge/license-MIT-CCCCCC.svg)
 
