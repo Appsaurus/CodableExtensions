@@ -1,0 +1,1472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		"CodableExtensions::CodableExtensionsPackageTests::ProductTarget" /* CodableExtensionsPackageTests */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = OBJ_142 /* Build configuration list for PBXAggregateTarget "CodableExtensionsPackageTests" */;
+			buildPhases = (
+			);
+			dependencies = (
+				OBJ_145 /* PBXTargetDependency */,
+			);
+			name = CodableExtensionsPackageTests;
+			productName = CodableExtensionsPackageTests;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		OBJ_102 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_83 /* AnyCodable.swift */; };
+		OBJ_103 /* GenericDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_84 /* GenericDecodingContainer.swift */; };
+		OBJ_104 /* InvalidElementStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_85 /* InvalidElementStrategy.swift */; };
+		OBJ_105 /* KeyedDecodingContainer+Any.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_86 /* KeyedDecodingContainer+Any.swift */; };
+		OBJ_106 /* KeyedEncodingContainer+Any.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_87 /* KeyedEncodingContainer+Any.swift */; };
+		OBJ_107 /* RawCodingKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_88 /* RawCodingKey.swift */; };
+		OBJ_114 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_89 /* Package.swift */; };
+		OBJ_120 /* AnyCodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_8 /* AnyCodableExtensions.swift */; };
+		OBJ_121 /* Codable+iso8601.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Codable+iso8601.swift */; };
+		OBJ_122 /* CodableDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* CodableDefaults.swift */; };
+		OBJ_123 /* CodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* CodableExtensions.swift */; };
+		OBJ_124 /* DecoderUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* DecoderUpdatable.swift */; };
+		OBJ_125 /* ReflectionCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* ReflectionCodable.swift */; };
+		OBJ_127 /* Codability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Codability::Codability::Product" /* Codability.framework */; };
+		OBJ_128 /* RuntimeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "RuntimeExtensions::RuntimeExtensions::Product" /* RuntimeExtensions.framework */; };
+		OBJ_129 /* Runtime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Runtime::Runtime::Product" /* Runtime.framework */; };
+		OBJ_140 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
+		OBJ_151 /* CodableExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* CodableExtensionsTests.swift */; };
+		OBJ_153 /* SwiftTestUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "SwiftTestUtils::SwiftTestUtils::Product" /* SwiftTestUtils.framework */; };
+		OBJ_154 /* CodableExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "CodableExtensions::CodableExtensions::Product" /* CodableExtensions.framework */; };
+		OBJ_155 /* Codability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Codability::Codability::Product" /* Codability.framework */; };
+		OBJ_156 /* RuntimeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "RuntimeExtensions::RuntimeExtensions::Product" /* RuntimeExtensions.framework */; };
+		OBJ_157 /* Runtime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Runtime::Runtime::Product" /* Runtime.framework */; };
+		OBJ_168 /* DefaultValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* DefaultValue.swift */; };
+		OBJ_169 /* Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* Factory.swift */; };
+		OBJ_170 /* ClassHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* ClassHeader.swift */; };
+		OBJ_171 /* ClassMetadataLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* ClassMetadataLayout.swift */; };
+		OBJ_172 /* EnumMetadataLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* EnumMetadataLayout.swift */; };
+		OBJ_173 /* ExistentialContainter.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* ExistentialContainter.swift */; };
+		OBJ_174 /* FunctionMetadataLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* FunctionMetadataLayout.swift */; };
+		OBJ_175 /* MetadataLayoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* MetadataLayoutType.swift */; };
+		OBJ_176 /* NominalMetadataLayoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* NominalMetadataLayoutType.swift */; };
+		OBJ_177 /* NominalTypeDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* NominalTypeDescriptor.swift */; };
+		OBJ_178 /* ProtocolDescriptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* ProtocolDescriptor.swift */; };
+		OBJ_179 /* ProtocolMetadataLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* ProtocolMetadataLayout.swift */; };
+		OBJ_180 /* ProtocolTypeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* ProtocolTypeContainer.swift */; };
+		OBJ_181 /* StructMetadataLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* StructMetadataLayout.swift */; };
+		OBJ_182 /* TupleMetadataLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* TupleMetadataLayout.swift */; };
+		OBJ_183 /* ValueWitnessTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* ValueWitnessTable.swift */; };
+		OBJ_184 /* ClassMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_53 /* ClassMetadata.swift */; };
+		OBJ_185 /* EnumMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* EnumMetadata.swift */; };
+		OBJ_186 /* FuntionMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_55 /* FuntionMetadata.swift */; };
+		OBJ_187 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_56 /* Metadata.swift */; };
+		OBJ_188 /* MetadataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_57 /* MetadataType.swift */; };
+		OBJ_189 /* NominalMetadataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* NominalMetadataType.swift */; };
+		OBJ_190 /* ProtocolMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* ProtocolMetadata.swift */; };
+		OBJ_191 /* StructMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* StructMetadata.swift */; };
+		OBJ_192 /* TupleMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* TupleMetadata.swift */; };
+		OBJ_193 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_63 /* Errors.swift */; };
+		OBJ_194 /* FunctionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_64 /* FunctionInfo.swift */; };
+		OBJ_195 /* Kind.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* Kind.swift */; };
+		OBJ_196 /* PropertyInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_66 /* PropertyInfo.swift */; };
+		OBJ_197 /* TypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_67 /* TypeInfo.swift */; };
+		OBJ_198 /* TypeInfoConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_68 /* TypeInfoConvertible.swift */; };
+		OBJ_199 /* Pointers.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_70 /* Pointers.swift */; };
+		OBJ_200 /* RelativePointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_71 /* RelativePointer.swift */; };
+		OBJ_201 /* RelativeVectorPointer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_72 /* RelativeVectorPointer.swift */; };
+		OBJ_202 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_73 /* Vector.swift */; };
+		OBJ_203 /* GettersSetters.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_75 /* GettersSetters.swift */; };
+		OBJ_204 /* IntegerConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_76 /* IntegerConvertible.swift */; };
+		OBJ_205 /* Pointer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_77 /* Pointer+Extensions.swift */; };
+		OBJ_206 /* RetainCounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_78 /* RetainCounts.swift */; };
+		OBJ_207 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_79 /* String+Extensions.swift */; };
+		OBJ_213 /* EmptyInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* EmptyInitializable.swift */; };
+		OBJ_214 /* EnumUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* EnumUtils.swift */; };
+		OBJ_215 /* GlobalRuntimeFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* GlobalRuntimeFunctions.swift */; };
+		OBJ_216 /* KVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* KVC.swift */; };
+		OBJ_218 /* Runtime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Runtime::Runtime::Product" /* Runtime.framework */; };
+		OBJ_225 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* Package.swift */; };
+		OBJ_231 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_80 /* Package.swift */; };
+		OBJ_236 /* BaseTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* BaseTestCase.swift */; };
+		OBJ_237 /* LinuxTestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* LinuxTestable.swift */; };
+		OBJ_238 /* XCAssertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* XCAssertions.swift */; };
+		OBJ_245 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* Package.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4403A9020E2BC87002AF54F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Codability::Codability";
+			remoteInfo = Codability;
+		};
+		E4403A9120E2BC87002AF54F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "RuntimeExtensions::RuntimeExtensions";
+			remoteInfo = RuntimeExtensions;
+		};
+		E4403A9220E2BC87002AF54F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Runtime::Runtime";
+			remoteInfo = Runtime;
+		};
+		E4403A9320E2BC87002AF54F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Runtime::Runtime";
+			remoteInfo = Runtime;
+		};
+		E4403A9420E2BC87002AF54F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "SwiftTestUtils::SwiftTestUtils";
+			remoteInfo = SwiftTestUtils;
+		};
+		E4403A9520E2BC87002AF54F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "CodableExtensions::CodableExtensions";
+			remoteInfo = CodableExtensions;
+		};
+		E4403A9620E2BC87002AF54F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Codability::Codability";
+			remoteInfo = Codability;
+		};
+		E4403A9720E2BC87002AF54F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "RuntimeExtensions::RuntimeExtensions";
+			remoteInfo = RuntimeExtensions;
+		};
+		E4403A9820E2BC87002AF54F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "Runtime::Runtime";
+			remoteInfo = Runtime;
+		};
+		E4403A9920E2BC88002AF54F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "CodableExtensions::CodableExtensionsTests";
+			remoteInfo = CodableExtensionsTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		"Codability::Codability::Product" /* Codability.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Codability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"CodableExtensions::CodableExtensions::Product" /* CodableExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CodableExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"CodableExtensions::CodableExtensionsTests::Product" /* CodableExtensionsTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = CodableExtensionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4403A9A20E2BC98002AF54F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		OBJ_10 /* CodableDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDefaults.swift; sourceTree = "<group>"; };
+		OBJ_11 /* CodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtensions.swift; sourceTree = "<group>"; };
+		OBJ_12 /* DecoderUpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderUpdatable.swift; sourceTree = "<group>"; };
+		OBJ_13 /* ReflectionCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionCodable.swift; sourceTree = "<group>"; };
+		OBJ_15 /* CodableExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtensionsTests.swift; sourceTree = "<group>"; };
+		OBJ_16 /* bin */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bin; sourceTree = SOURCE_ROOT; };
+		OBJ_17 /* Example */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Example; sourceTree = SOURCE_ROOT; };
+		OBJ_18 /* CodableExtensionsTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = CodableExtensionsTests; sourceTree = SOURCE_ROOT; };
+		OBJ_19 /* Info */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Info; sourceTree = SOURCE_ROOT; };
+		OBJ_22 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/brianstrobach/Appsaurus/CompanyProjects/OpenSource/swift/CodableExtensions/.build/checkouts/RuntimeExtensions--5719776098590849474/Package.swift"; sourceTree = "<group>"; };
+		OBJ_23 /* EmptyInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyInitializable.swift; sourceTree = "<group>"; };
+		OBJ_24 /* EnumUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumUtils.swift; sourceTree = "<group>"; };
+		OBJ_25 /* GlobalRuntimeFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalRuntimeFunctions.swift; sourceTree = "<group>"; };
+		OBJ_26 /* KVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KVC.swift; sourceTree = "<group>"; };
+		OBJ_28 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/brianstrobach/Appsaurus/CompanyProjects/OpenSource/swift/CodableExtensions/.build/checkouts/SwiftTestUtils-3371106396395558887/Package.swift"; sourceTree = "<group>"; };
+		OBJ_29 /* BaseTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTestCase.swift; sourceTree = "<group>"; };
+		OBJ_30 /* LinuxTestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinuxTestable.swift; sourceTree = "<group>"; };
+		OBJ_31 /* XCAssertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCAssertions.swift; sourceTree = "<group>"; };
+		OBJ_35 /* DefaultValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultValue.swift; sourceTree = "<group>"; };
+		OBJ_36 /* Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Factory.swift; sourceTree = "<group>"; };
+		OBJ_38 /* ClassHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassHeader.swift; sourceTree = "<group>"; };
+		OBJ_39 /* ClassMetadataLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMetadataLayout.swift; sourceTree = "<group>"; };
+		OBJ_40 /* EnumMetadataLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumMetadataLayout.swift; sourceTree = "<group>"; };
+		OBJ_41 /* ExistentialContainter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExistentialContainter.swift; sourceTree = "<group>"; };
+		OBJ_42 /* FunctionMetadataLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionMetadataLayout.swift; sourceTree = "<group>"; };
+		OBJ_43 /* MetadataLayoutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataLayoutType.swift; sourceTree = "<group>"; };
+		OBJ_44 /* NominalMetadataLayoutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NominalMetadataLayoutType.swift; sourceTree = "<group>"; };
+		OBJ_45 /* NominalTypeDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NominalTypeDescriptor.swift; sourceTree = "<group>"; };
+		OBJ_46 /* ProtocolDescriptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolDescriptor.swift; sourceTree = "<group>"; };
+		OBJ_47 /* ProtocolMetadataLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolMetadataLayout.swift; sourceTree = "<group>"; };
+		OBJ_48 /* ProtocolTypeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolTypeContainer.swift; sourceTree = "<group>"; };
+		OBJ_49 /* StructMetadataLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructMetadataLayout.swift; sourceTree = "<group>"; };
+		OBJ_50 /* TupleMetadataLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TupleMetadataLayout.swift; sourceTree = "<group>"; };
+		OBJ_51 /* ValueWitnessTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueWitnessTable.swift; sourceTree = "<group>"; };
+		OBJ_53 /* ClassMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassMetadata.swift; sourceTree = "<group>"; };
+		OBJ_54 /* EnumMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumMetadata.swift; sourceTree = "<group>"; };
+		OBJ_55 /* FuntionMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuntionMetadata.swift; sourceTree = "<group>"; };
+		OBJ_56 /* Metadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		OBJ_57 /* MetadataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetadataType.swift; sourceTree = "<group>"; };
+		OBJ_58 /* NominalMetadataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NominalMetadataType.swift; sourceTree = "<group>"; };
+		OBJ_59 /* ProtocolMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtocolMetadata.swift; sourceTree = "<group>"; };
+		OBJ_6 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		OBJ_60 /* StructMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructMetadata.swift; sourceTree = "<group>"; };
+		OBJ_61 /* TupleMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TupleMetadata.swift; sourceTree = "<group>"; };
+		OBJ_63 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
+		OBJ_64 /* FunctionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionInfo.swift; sourceTree = "<group>"; };
+		OBJ_65 /* Kind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kind.swift; sourceTree = "<group>"; };
+		OBJ_66 /* PropertyInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyInfo.swift; sourceTree = "<group>"; };
+		OBJ_67 /* TypeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeInfo.swift; sourceTree = "<group>"; };
+		OBJ_68 /* TypeInfoConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeInfoConvertible.swift; sourceTree = "<group>"; };
+		OBJ_70 /* Pointers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pointers.swift; sourceTree = "<group>"; };
+		OBJ_71 /* RelativePointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativePointer.swift; sourceTree = "<group>"; };
+		OBJ_72 /* RelativeVectorPointer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeVectorPointer.swift; sourceTree = "<group>"; };
+		OBJ_73 /* Vector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
+		OBJ_75 /* GettersSetters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettersSetters.swift; sourceTree = "<group>"; };
+		OBJ_76 /* IntegerConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntegerConvertible.swift; sourceTree = "<group>"; };
+		OBJ_77 /* Pointer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pointer+Extensions.swift"; sourceTree = "<group>"; };
+		OBJ_78 /* RetainCounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetainCounts.swift; sourceTree = "<group>"; };
+		OBJ_79 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		OBJ_8 /* AnyCodableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodableExtensions.swift; sourceTree = "<group>"; };
+		OBJ_80 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/brianstrobach/Appsaurus/CompanyProjects/OpenSource/swift/CodableExtensions/.build/checkouts/Runtime--6253572251645273876/Package.swift"; sourceTree = "<group>"; };
+		OBJ_83 /* AnyCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyCodable.swift; sourceTree = "<group>"; };
+		OBJ_84 /* GenericDecodingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericDecodingContainer.swift; sourceTree = "<group>"; };
+		OBJ_85 /* InvalidElementStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvalidElementStrategy.swift; sourceTree = "<group>"; };
+		OBJ_86 /* KeyedDecodingContainer+Any.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedDecodingContainer+Any.swift"; sourceTree = "<group>"; };
+		OBJ_87 /* KeyedEncodingContainer+Any.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyedEncodingContainer+Any.swift"; sourceTree = "<group>"; };
+		OBJ_88 /* RawCodingKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RawCodingKey.swift; sourceTree = "<group>"; };
+		OBJ_89 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = "/Users/brianstrobach/Appsaurus/CompanyProjects/OpenSource/swift/CodableExtensions/.build/checkouts/Codability.git--661166634494793555/Package.swift"; sourceTree = "<group>"; };
+		OBJ_9 /* Codable+iso8601.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+iso8601.swift"; sourceTree = "<group>"; };
+		"Runtime::Runtime::Product" /* Runtime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Runtime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"RuntimeExtensions::RuntimeExtensions::Product" /* RuntimeExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RuntimeExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"SwiftTestUtils::SwiftTestUtils::Product" /* SwiftTestUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftTestUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		OBJ_108 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_126 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_127 /* Codability.framework in Frameworks */,
+				OBJ_128 /* RuntimeExtensions.framework in Frameworks */,
+				OBJ_129 /* Runtime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_152 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_153 /* SwiftTestUtils.framework in Frameworks */,
+				OBJ_154 /* CodableExtensions.framework in Frameworks */,
+				OBJ_155 /* Codability.framework in Frameworks */,
+				OBJ_156 /* RuntimeExtensions.framework in Frameworks */,
+				OBJ_157 /* Runtime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_208 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_217 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_218 /* Runtime.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_239 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		OBJ_14 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_15 /* CodableExtensionsTests.swift */,
+			);
+			name = Tests;
+			path = CodableExtensionsTests/Shared;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_20 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_21 /* RuntimeExtensions 0.1.0 */,
+				OBJ_27 /* SwiftTestUtils 1.0.0 */,
+				OBJ_32 /* Runtime 0.7.1 */,
+				OBJ_81 /* Codability 0.2.0 */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		OBJ_21 /* RuntimeExtensions 0.1.0 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_22 /* Package.swift */,
+				OBJ_23 /* EmptyInitializable.swift */,
+				OBJ_24 /* EnumUtils.swift */,
+				OBJ_25 /* GlobalRuntimeFunctions.swift */,
+				OBJ_26 /* KVC.swift */,
+			);
+			name = "RuntimeExtensions 0.1.0";
+			path = ".build/checkouts/RuntimeExtensions--5719776098590849474/Sources/Shared";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_27 /* SwiftTestUtils 1.0.0 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_28 /* Package.swift */,
+				OBJ_29 /* BaseTestCase.swift */,
+				OBJ_30 /* LinuxTestable.swift */,
+				OBJ_31 /* XCAssertions.swift */,
+			);
+			name = "SwiftTestUtils 1.0.0";
+			path = ".build/checkouts/SwiftTestUtils-3371106396395558887/Sources/Shared";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_32 /* Runtime 0.7.1 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_33 /* Runtime */,
+				OBJ_80 /* Package.swift */,
+			);
+			name = "Runtime 0.7.1";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_33 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_34 /* Factory */,
+				OBJ_37 /* Layouts */,
+				OBJ_52 /* Metadata */,
+				OBJ_62 /* Models */,
+				OBJ_69 /* Pointers */,
+				OBJ_74 /* Utilities */,
+			);
+			name = Runtime;
+			path = ".build/checkouts/Runtime--6253572251645273876/Runtime";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_34 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_35 /* DefaultValue.swift */,
+				OBJ_36 /* Factory.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		OBJ_37 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_38 /* ClassHeader.swift */,
+				OBJ_39 /* ClassMetadataLayout.swift */,
+				OBJ_40 /* EnumMetadataLayout.swift */,
+				OBJ_41 /* ExistentialContainter.swift */,
+				OBJ_42 /* FunctionMetadataLayout.swift */,
+				OBJ_43 /* MetadataLayoutType.swift */,
+				OBJ_44 /* NominalMetadataLayoutType.swift */,
+				OBJ_45 /* NominalTypeDescriptor.swift */,
+				OBJ_46 /* ProtocolDescriptor.swift */,
+				OBJ_47 /* ProtocolMetadataLayout.swift */,
+				OBJ_48 /* ProtocolTypeContainer.swift */,
+				OBJ_49 /* StructMetadataLayout.swift */,
+				OBJ_50 /* TupleMetadataLayout.swift */,
+				OBJ_51 /* ValueWitnessTable.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
+		OBJ_5 /*  */ = {
+			isa = PBXGroup;
+			children = (
+				E4403A9A20E2BC98002AF54F /* README.md */,
+				OBJ_6 /* Package.swift */,
+				OBJ_7 /* Sources */,
+				OBJ_14 /* Tests */,
+				OBJ_16 /* bin */,
+				OBJ_17 /* Example */,
+				OBJ_18 /* CodableExtensionsTests */,
+				OBJ_19 /* Info */,
+				OBJ_20 /* Dependencies */,
+				OBJ_90 /* Products */,
+			);
+			name = "";
+			sourceTree = "<group>";
+		};
+		OBJ_52 /* Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_53 /* ClassMetadata.swift */,
+				OBJ_54 /* EnumMetadata.swift */,
+				OBJ_55 /* FuntionMetadata.swift */,
+				OBJ_56 /* Metadata.swift */,
+				OBJ_57 /* MetadataType.swift */,
+				OBJ_58 /* NominalMetadataType.swift */,
+				OBJ_59 /* ProtocolMetadata.swift */,
+				OBJ_60 /* StructMetadata.swift */,
+				OBJ_61 /* TupleMetadata.swift */,
+			);
+			path = Metadata;
+			sourceTree = "<group>";
+		};
+		OBJ_62 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_63 /* Errors.swift */,
+				OBJ_64 /* FunctionInfo.swift */,
+				OBJ_65 /* Kind.swift */,
+				OBJ_66 /* PropertyInfo.swift */,
+				OBJ_67 /* TypeInfo.swift */,
+				OBJ_68 /* TypeInfoConvertible.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		OBJ_69 /* Pointers */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_70 /* Pointers.swift */,
+				OBJ_71 /* RelativePointer.swift */,
+				OBJ_72 /* RelativeVectorPointer.swift */,
+				OBJ_73 /* Vector.swift */,
+			);
+			path = Pointers;
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_8 /* AnyCodableExtensions.swift */,
+				OBJ_9 /* Codable+iso8601.swift */,
+				OBJ_10 /* CodableDefaults.swift */,
+				OBJ_11 /* CodableExtensions.swift */,
+				OBJ_12 /* DecoderUpdatable.swift */,
+				OBJ_13 /* ReflectionCodable.swift */,
+			);
+			name = Sources;
+			path = Sources/Shared;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_74 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_75 /* GettersSetters.swift */,
+				OBJ_76 /* IntegerConvertible.swift */,
+				OBJ_77 /* Pointer+Extensions.swift */,
+				OBJ_78 /* RetainCounts.swift */,
+				OBJ_79 /* String+Extensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		OBJ_81 /* Codability 0.2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_82 /* Codability */,
+				OBJ_89 /* Package.swift */,
+			);
+			name = "Codability 0.2.0";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_82 /* Codability */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_83 /* AnyCodable.swift */,
+				OBJ_84 /* GenericDecodingContainer.swift */,
+				OBJ_85 /* InvalidElementStrategy.swift */,
+				OBJ_86 /* KeyedDecodingContainer+Any.swift */,
+				OBJ_87 /* KeyedEncodingContainer+Any.swift */,
+				OBJ_88 /* RawCodingKey.swift */,
+			);
+			name = Codability;
+			path = ".build/checkouts/Codability.git--661166634494793555/Sources/Codability";
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_90 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				"CodableExtensions::CodableExtensions::Product" /* CodableExtensions.framework */,
+				"CodableExtensions::CodableExtensionsTests::Product" /* CodableExtensionsTests.xctest */,
+				"Codability::Codability::Product" /* Codability.framework */,
+				"SwiftTestUtils::SwiftTestUtils::Product" /* SwiftTestUtils.framework */,
+				"RuntimeExtensions::RuntimeExtensions::Product" /* RuntimeExtensions.framework */,
+				"Runtime::Runtime::Product" /* Runtime.framework */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"Codability::Codability" /* Codability */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_98 /* Build configuration list for PBXNativeTarget "Codability" */;
+			buildPhases = (
+				OBJ_101 /* Sources */,
+				OBJ_108 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Codability;
+			productName = Codability;
+			productReference = "Codability::Codability::Product" /* Codability.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Codability::SwiftPMPackageDescription" /* CodabilityPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_110 /* Build configuration list for PBXNativeTarget "CodabilityPackageDescription" */;
+			buildPhases = (
+				OBJ_113 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodabilityPackageDescription;
+			productName = CodabilityPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"CodableExtensions::CodableExtensions" /* CodableExtensions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_116 /* Build configuration list for PBXNativeTarget "CodableExtensions" */;
+			buildPhases = (
+				OBJ_119 /* Sources */,
+				OBJ_126 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_130 /* PBXTargetDependency */,
+				OBJ_131 /* PBXTargetDependency */,
+				OBJ_133 /* PBXTargetDependency */,
+			);
+			name = CodableExtensions;
+			productName = CodableExtensions;
+			productReference = "CodableExtensions::CodableExtensions::Product" /* CodableExtensions.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"CodableExtensions::CodableExtensionsTests" /* CodableExtensionsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_147 /* Build configuration list for PBXNativeTarget "CodableExtensionsTests" */;
+			buildPhases = (
+				OBJ_150 /* Sources */,
+				OBJ_152 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_158 /* PBXTargetDependency */,
+				OBJ_160 /* PBXTargetDependency */,
+				OBJ_161 /* PBXTargetDependency */,
+				OBJ_162 /* PBXTargetDependency */,
+				OBJ_163 /* PBXTargetDependency */,
+			);
+			name = CodableExtensionsTests;
+			productName = CodableExtensionsTests;
+			productReference = "CodableExtensions::CodableExtensionsTests::Product" /* CodableExtensionsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		"CodableExtensions::SwiftPMPackageDescription" /* CodableExtensionsPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_136 /* Build configuration list for PBXNativeTarget "CodableExtensionsPackageDescription" */;
+			buildPhases = (
+				OBJ_139 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodableExtensionsPackageDescription;
+			productName = CodableExtensionsPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"Runtime::Runtime" /* Runtime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_164 /* Build configuration list for PBXNativeTarget "Runtime" */;
+			buildPhases = (
+				OBJ_167 /* Sources */,
+				OBJ_208 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Runtime;
+			productName = Runtime;
+			productReference = "Runtime::Runtime::Product" /* Runtime.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"Runtime::SwiftPMPackageDescription" /* RuntimePackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_227 /* Build configuration list for PBXNativeTarget "RuntimePackageDescription" */;
+			buildPhases = (
+				OBJ_230 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RuntimePackageDescription;
+			productName = RuntimePackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"RuntimeExtensions::RuntimeExtensions" /* RuntimeExtensions */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_209 /* Build configuration list for PBXNativeTarget "RuntimeExtensions" */;
+			buildPhases = (
+				OBJ_212 /* Sources */,
+				OBJ_217 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				OBJ_219 /* PBXTargetDependency */,
+			);
+			name = RuntimeExtensions;
+			productName = RuntimeExtensions;
+			productReference = "RuntimeExtensions::RuntimeExtensions::Product" /* RuntimeExtensions.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"RuntimeExtensions::SwiftPMPackageDescription" /* RuntimeExtensionsPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_221 /* Build configuration list for PBXNativeTarget "RuntimeExtensionsPackageDescription" */;
+			buildPhases = (
+				OBJ_224 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RuntimeExtensionsPackageDescription;
+			productName = RuntimeExtensionsPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"SwiftTestUtils::SwiftPMPackageDescription" /* SwiftTestUtilsPackageDescription */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_241 /* Build configuration list for PBXNativeTarget "SwiftTestUtilsPackageDescription" */;
+			buildPhases = (
+				OBJ_244 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftTestUtilsPackageDescription;
+			productName = SwiftTestUtilsPackageDescription;
+			productType = "com.apple.product-type.framework";
+		};
+		"SwiftTestUtils::SwiftTestUtils" /* SwiftTestUtils */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_232 /* Build configuration list for PBXNativeTarget "SwiftTestUtils" */;
+			buildPhases = (
+				OBJ_235 /* Sources */,
+				OBJ_239 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftTestUtils;
+			productName = SwiftTestUtils;
+			productReference = "SwiftTestUtils::SwiftTestUtils::Product" /* SwiftTestUtils.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "CodableExtensions" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = OBJ_5 /*  */;
+			productRefGroup = OBJ_90 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"Codability::Codability" /* Codability */,
+				"Codability::SwiftPMPackageDescription" /* CodabilityPackageDescription */,
+				"CodableExtensions::CodableExtensions" /* CodableExtensions */,
+				"CodableExtensions::SwiftPMPackageDescription" /* CodableExtensionsPackageDescription */,
+				"CodableExtensions::CodableExtensionsPackageTests::ProductTarget" /* CodableExtensionsPackageTests */,
+				"CodableExtensions::CodableExtensionsTests" /* CodableExtensionsTests */,
+				"Runtime::Runtime" /* Runtime */,
+				"RuntimeExtensions::RuntimeExtensions" /* RuntimeExtensions */,
+				"RuntimeExtensions::SwiftPMPackageDescription" /* RuntimeExtensionsPackageDescription */,
+				"Runtime::SwiftPMPackageDescription" /* RuntimePackageDescription */,
+				"SwiftTestUtils::SwiftTestUtils" /* SwiftTestUtils */,
+				"SwiftTestUtils::SwiftPMPackageDescription" /* SwiftTestUtilsPackageDescription */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		OBJ_101 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_102 /* AnyCodable.swift in Sources */,
+				OBJ_103 /* GenericDecodingContainer.swift in Sources */,
+				OBJ_104 /* InvalidElementStrategy.swift in Sources */,
+				OBJ_105 /* KeyedDecodingContainer+Any.swift in Sources */,
+				OBJ_106 /* KeyedEncodingContainer+Any.swift in Sources */,
+				OBJ_107 /* RawCodingKey.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_113 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_114 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_119 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_120 /* AnyCodableExtensions.swift in Sources */,
+				OBJ_121 /* Codable+iso8601.swift in Sources */,
+				OBJ_122 /* CodableDefaults.swift in Sources */,
+				OBJ_123 /* CodableExtensions.swift in Sources */,
+				OBJ_124 /* DecoderUpdatable.swift in Sources */,
+				OBJ_125 /* ReflectionCodable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_139 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_140 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_150 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_151 /* CodableExtensionsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_167 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_168 /* DefaultValue.swift in Sources */,
+				OBJ_169 /* Factory.swift in Sources */,
+				OBJ_170 /* ClassHeader.swift in Sources */,
+				OBJ_171 /* ClassMetadataLayout.swift in Sources */,
+				OBJ_172 /* EnumMetadataLayout.swift in Sources */,
+				OBJ_173 /* ExistentialContainter.swift in Sources */,
+				OBJ_174 /* FunctionMetadataLayout.swift in Sources */,
+				OBJ_175 /* MetadataLayoutType.swift in Sources */,
+				OBJ_176 /* NominalMetadataLayoutType.swift in Sources */,
+				OBJ_177 /* NominalTypeDescriptor.swift in Sources */,
+				OBJ_178 /* ProtocolDescriptor.swift in Sources */,
+				OBJ_179 /* ProtocolMetadataLayout.swift in Sources */,
+				OBJ_180 /* ProtocolTypeContainer.swift in Sources */,
+				OBJ_181 /* StructMetadataLayout.swift in Sources */,
+				OBJ_182 /* TupleMetadataLayout.swift in Sources */,
+				OBJ_183 /* ValueWitnessTable.swift in Sources */,
+				OBJ_184 /* ClassMetadata.swift in Sources */,
+				OBJ_185 /* EnumMetadata.swift in Sources */,
+				OBJ_186 /* FuntionMetadata.swift in Sources */,
+				OBJ_187 /* Metadata.swift in Sources */,
+				OBJ_188 /* MetadataType.swift in Sources */,
+				OBJ_189 /* NominalMetadataType.swift in Sources */,
+				OBJ_190 /* ProtocolMetadata.swift in Sources */,
+				OBJ_191 /* StructMetadata.swift in Sources */,
+				OBJ_192 /* TupleMetadata.swift in Sources */,
+				OBJ_193 /* Errors.swift in Sources */,
+				OBJ_194 /* FunctionInfo.swift in Sources */,
+				OBJ_195 /* Kind.swift in Sources */,
+				OBJ_196 /* PropertyInfo.swift in Sources */,
+				OBJ_197 /* TypeInfo.swift in Sources */,
+				OBJ_198 /* TypeInfoConvertible.swift in Sources */,
+				OBJ_199 /* Pointers.swift in Sources */,
+				OBJ_200 /* RelativePointer.swift in Sources */,
+				OBJ_201 /* RelativeVectorPointer.swift in Sources */,
+				OBJ_202 /* Vector.swift in Sources */,
+				OBJ_203 /* GettersSetters.swift in Sources */,
+				OBJ_204 /* IntegerConvertible.swift in Sources */,
+				OBJ_205 /* Pointer+Extensions.swift in Sources */,
+				OBJ_206 /* RetainCounts.swift in Sources */,
+				OBJ_207 /* String+Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_212 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_213 /* EmptyInitializable.swift in Sources */,
+				OBJ_214 /* EnumUtils.swift in Sources */,
+				OBJ_215 /* GlobalRuntimeFunctions.swift in Sources */,
+				OBJ_216 /* KVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_224 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_225 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_230 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_231 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_235 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_236 /* BaseTestCase.swift in Sources */,
+				OBJ_237 /* LinuxTestable.swift in Sources */,
+				OBJ_238 /* XCAssertions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_244 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				OBJ_245 /* Package.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		OBJ_130 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Codability::Codability" /* Codability */;
+			targetProxy = E4403A9020E2BC87002AF54F /* PBXContainerItemProxy */;
+		};
+		OBJ_131 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "RuntimeExtensions::RuntimeExtensions" /* RuntimeExtensions */;
+			targetProxy = E4403A9120E2BC87002AF54F /* PBXContainerItemProxy */;
+		};
+		OBJ_133 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Runtime::Runtime" /* Runtime */;
+			targetProxy = E4403A9320E2BC87002AF54F /* PBXContainerItemProxy */;
+		};
+		OBJ_145 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "CodableExtensions::CodableExtensionsTests" /* CodableExtensionsTests */;
+			targetProxy = E4403A9920E2BC88002AF54F /* PBXContainerItemProxy */;
+		};
+		OBJ_158 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "SwiftTestUtils::SwiftTestUtils" /* SwiftTestUtils */;
+			targetProxy = E4403A9420E2BC87002AF54F /* PBXContainerItemProxy */;
+		};
+		OBJ_160 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "CodableExtensions::CodableExtensions" /* CodableExtensions */;
+			targetProxy = E4403A9520E2BC87002AF54F /* PBXContainerItemProxy */;
+		};
+		OBJ_161 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Codability::Codability" /* Codability */;
+			targetProxy = E4403A9620E2BC87002AF54F /* PBXContainerItemProxy */;
+		};
+		OBJ_162 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "RuntimeExtensions::RuntimeExtensions" /* RuntimeExtensions */;
+			targetProxy = E4403A9720E2BC87002AF54F /* PBXContainerItemProxy */;
+		};
+		OBJ_163 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Runtime::Runtime" /* Runtime */;
+			targetProxy = E4403A9820E2BC87002AF54F /* PBXContainerItemProxy */;
+		};
+		OBJ_219 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "Runtime::Runtime" /* Runtime */;
+			targetProxy = E4403A9220E2BC87002AF54F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		OBJ_100 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CodableExtensions.xcodeproj/Codability_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Codability;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Codability;
+			};
+			name = Release;
+		};
+		OBJ_111 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_117 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CodableExtensions.xcodeproj/CodableExtensions_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = CodableExtensions;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = CodableExtensions;
+			};
+			name = Debug;
+		};
+		OBJ_118 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CodableExtensions.xcodeproj/CodableExtensions_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = CodableExtensions;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = CodableExtensions;
+			};
+			name = Release;
+		};
+		OBJ_137 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_138 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_143 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		OBJ_144 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		OBJ_148 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CodableExtensions.xcodeproj/CodableExtensionsTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = CodableExtensionsTests;
+			};
+			name = Debug;
+		};
+		OBJ_149 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CodableExtensions.xcodeproj/CodableExtensionsTests_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = CodableExtensionsTests;
+			};
+			name = Release;
+		};
+		OBJ_165 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CodableExtensions.xcodeproj/Runtime_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Runtime;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Runtime;
+			};
+			name = Debug;
+		};
+		OBJ_166 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CodableExtensions.xcodeproj/Runtime_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Runtime;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Runtime;
+			};
+			name = Release;
+		};
+		OBJ_210 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CodableExtensions.xcodeproj/RuntimeExtensions_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = RuntimeExtensions;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = RuntimeExtensions;
+			};
+			name = Debug;
+		};
+		OBJ_211 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CodableExtensions.xcodeproj/RuntimeExtensions_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = RuntimeExtensions;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = RuntimeExtensions;
+			};
+			name = Release;
+		};
+		OBJ_222 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_223 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_228 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_229 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_233 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CodableExtensions.xcodeproj/SwiftTestUtils_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = SwiftTestUtils;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SwiftTestUtils;
+			};
+			name = Debug;
+		};
+		OBJ_234 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CodableExtensions.xcodeproj/SwiftTestUtils_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = SwiftTestUtils;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = SwiftTestUtils;
+			};
+			name = Release;
+		};
+		OBJ_242 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		OBJ_243 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD = /usr/bin/true;
+				OTHER_SWIFT_FLAGS = "-swift-version 4 -I $(TOOLCHAIN_DIR)/usr/lib/swift/pm/4 -target x86_64-apple-macosx10.10 -sdk /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator appletvos appletvsimulator watchos watchsimulator";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+		OBJ_99 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = CodableExtensions.xcodeproj/Codability_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) $(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = Codability;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGET_NAME = Codability;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		OBJ_110 /* Build configuration list for PBXNativeTarget "CodabilityPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_111 /* Debug */,
+				OBJ_112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_116 /* Build configuration list for PBXNativeTarget "CodableExtensions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_117 /* Debug */,
+				OBJ_118 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_136 /* Build configuration list for PBXNativeTarget "CodableExtensionsPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_137 /* Debug */,
+				OBJ_138 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_142 /* Build configuration list for PBXAggregateTarget "CodableExtensionsPackageTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_143 /* Debug */,
+				OBJ_144 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_147 /* Build configuration list for PBXNativeTarget "CodableExtensionsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_148 /* Debug */,
+				OBJ_149 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_164 /* Build configuration list for PBXNativeTarget "Runtime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_165 /* Debug */,
+				OBJ_166 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "CodableExtensions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_209 /* Build configuration list for PBXNativeTarget "RuntimeExtensions" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_210 /* Debug */,
+				OBJ_211 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_221 /* Build configuration list for PBXNativeTarget "RuntimeExtensionsPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_222 /* Debug */,
+				OBJ_223 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_227 /* Build configuration list for PBXNativeTarget "RuntimePackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_228 /* Debug */,
+				OBJ_229 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_232 /* Build configuration list for PBXNativeTarget "SwiftTestUtils" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_233 /* Debug */,
+				OBJ_234 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_241 /* Build configuration list for PBXNativeTarget "SwiftTestUtilsPackageDescription" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_242 /* Debug */,
+				OBJ_243 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		OBJ_98 /* Build configuration list for PBXNativeTarget "Codability" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_99 /* Debug */,
+				OBJ_100 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}

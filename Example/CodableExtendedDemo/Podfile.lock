@@ -1,0 +1,43 @@
+PODS:
+  - Codability (0.2.1)
+  - CodableExtensions (0.1.0):
+    - Codability
+    - RuntimeExtensions
+  - Runtime (0.7.1)
+  - RuntimeExtensions (0.1.0):
+    - Runtime
+
+DEPENDENCIES:
+  - Codability (from `https://github.com/Appsaurus/Codability`)
+  - CodableExtensions (from `../../`)
+  - RuntimeExtensions (from `https://github.com/Appsaurus/RuntimeExtensions`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Runtime
+
+EXTERNAL SOURCES:
+  Codability:
+    :git: https://github.com/Appsaurus/Codability
+  CodableExtensions:
+    :path: "../../"
+  RuntimeExtensions:
+    :git: https://github.com/Appsaurus/RuntimeExtensions
+
+CHECKOUT OPTIONS:
+  Codability:
+    :commit: 55afc374ab844cc0363d44cc2c543ffb9cf05a3f
+    :git: https://github.com/Appsaurus/Codability
+  RuntimeExtensions:
+    :commit: 515ea89f5fc1345dbb681a823f91dcb6435e0493
+    :git: https://github.com/Appsaurus/RuntimeExtensions
+
+SPEC CHECKSUMS:
+  Codability: c888a339f4784c15a482b2180799e1836fc119aa
+  CodableExtensions: d688b5b89d1375410aa2d45b0ba90f636e6eb0ae
+  Runtime: 6b152eab4773d494041afe5480a84c91d86961b9
+  RuntimeExtensions: 81580d0ecf987e49c8889758d968519c9e23e8f1
+
+PODFILE CHECKSUM: 5068845544c45ec0cb4a1df809ae7d53cebb9fff
+
+COCOAPODS: 1.5.0

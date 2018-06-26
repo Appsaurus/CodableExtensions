@@ -1,0 +1,10 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'CodableExtensionsDemo' do
+ pod 'CodableExtensions', path: '../../'
+ pod 'RuntimeExtensions', :git => 'https://github.com/Appsaurus/RuntimeExtensions'
+ pod 'Codability', :git => 'https://github.com/Appsaurus/Codability'
+end
+
