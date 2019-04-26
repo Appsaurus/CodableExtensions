@@ -35,4 +35,11 @@ extension JSONEncoder{
 		self.init()
 		self.dateEncodingStrategy = dateEncodingStrategy
 	}
+
+}
+
+extension JSONDecoder{
+    public func decodeNested<D: Decodable>(codableType: D.Type = D.self, from data: Data, at key: String) throws -> D?{
+        return try decode([String: D].self, from: data)[key]
+    }
 }

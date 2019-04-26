@@ -20,62 +20,6 @@
                ReferencedContainer = "container:CodableExtensions.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Codability::Codability"
-               BuildableName = "Codability.framework"
-               BlueprintName = "Codability"
-               ReferencedContainer = "container:CodableExtensions.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "SwiftTestUtils::SwiftTestUtils"
-               BuildableName = "SwiftTestUtils.framework"
-               BlueprintName = "SwiftTestUtils"
-               ReferencedContainer = "container:CodableExtensions.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "RuntimeExtensions::RuntimeExtensions"
-               BuildableName = "RuntimeExtensions.framework"
-               BlueprintName = "RuntimeExtensions"
-               ReferencedContainer = "container:CodableExtensions.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Runtime::Runtime"
-               BuildableName = "Runtime.framework"
-               BlueprintName = "Runtime"
-               ReferencedContainer = "container:CodableExtensions.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

@@ -23,7 +23,8 @@ class CodableExtensionsTests: BaseTestCase{
 		("testDecodeDictionaryFromData", testDecodeDictionaryFromData),
 		("testDecoderUpdatable", testDecoderUpdatable),
 		("testReflectionCoding", testReflectionCoding),
-		("testDerivedValueEncoding", testDerivedValueEncoding)
+		("testDerivedValueEncoding", testDerivedValueEncoding),
+        ("testTransformers", testTransformers)
 	]
 
 	func testLinuxTestSuiteIncludesAllTests(){
@@ -48,9 +49,9 @@ class CodableExtensionsTests: BaseTestCase{
 	public func testDecoderUpdatable() throws{
 		let original: TestModel = .init()
 		var updated: TestModel = .init()
-		XCTAssertJSONEqual(source: original, candidates: updated)
-		try updated.update(with: encodedTestDictionary)
-		XCTAssertJSONNotEqual(source: original, candidates: updated)
+        XCTAssertJSONEqual(source: original, candidates: updated)
+        try updated.update(with: encodedTestDictionary)
+        XCTAssertJSONNotEqual(source: original, candidates: updated)
 	}
 
 	public func testReflectionCoding() throws{
@@ -66,53 +67,57 @@ class CodableExtensionsTests: BaseTestCase{
 	public func testDerivedValueEncoding() throws{
 		let model = TestModel()
 
-		let computedValueKey: String = "computedValueKey"
-		let computedNestedModelKey: String = "computedNestedModelKey"
-		let computedNestedModelCollectionKey: String = "computedNestedModelCollectionKey"
+        let computedValueKey: String = "computedValueKey"
+        let computedNestedModelKey: String = "computedNestedModelKey"
+        let computedNestedModelCollectionKey: String = "computedNestedModelCollectionKey"
 
-		//Derived from models keypaths
-		let keyPathDerivedValueKey: String = "keyPathDerivedValueKey"
-		let keyPathDerivedNestedModelKey: String = "keyPathDerivedNestedModelKey"
-		let keyPathDerivedNestedModelCollectionKey: String = "keyPathDerivedNestedModelCollectionKey"
+        //Derived from models keypaths
+        let keyPathDerivedValueKey: String = "keyPathDerivedValueKey"
+        let keyPathDerivedNestedModelKey: String = "keyPathDerivedNestedModelKey"
+        let keyPathDerivedNestedModelCollectionKey: String = "keyPathDerivedNestedModelCollectionKey"
 
-		//Derived from model functions
-		let functionDerivedValueKey: String = "functionDerivedValueKey"
-		let functionDerivedNestedModelKey: String = "functionDerivedNestedModelKey"
-		let functionDerivedNestedCollectionModelKey: String = "functionDerivedNestedCollectionModelKey"
+        //Derived from model functions
+        let functionDerivedValueKey: String = "functionDerivedValueKey"
+        let functionDerivedNestedModelKey: String = "functionDerivedNestedModelKey"
+        let functionDerivedNestedCollectionModelKey: String = "functionDerivedNestedCollectionModelKey"
 
-		//Callsite instantiated
+        //Callsite instantiated
 
-		let callsiteInstantiatedStringsKey = "callsiteInstantiatedStrings"
-		let callsiteInstantiatedStrings = ["derived", "derived", "derived"]
+        let callsiteInstantiatedStringsKey = "callsiteInstantiatedStrings"
+        let callsiteInstantiatedStrings = ["derived", "derived", "derived"]
 
-		let callsiteInstantiatedModelKey: String = "callsiteInstantiatedModelKey"
-		let callsiteInstantiatedModel = NestedTestModel()
+        let callsiteInstantiatedModelKey: String = "callsiteInstantiatedModelKey"
+        let callsiteInstantiatedModel = NestedTestModel()
 
-		let callsiteInstantiatedModelCollectionKey: String = "callsiteInstantiatedModelCollectionKey"
-		let callsiteInstantiatedModelCollection = [NestedTestModel(), NestedTestModel()]
+        let callsiteInstantiatedModelCollectionKey: String = "callsiteInstantiatedModelCollectionKey"
+        let callsiteInstantiatedModelCollection = [NestedTestModel(), NestedTestModel()]
 
-		let derivedValues: [String : Any] = [
-			computedValueKey : model.computedValue,
-			computedNestedModelKey: model.computedNestedModel,
-			computedNestedModelCollectionKey: model.computedNestedModelCollection,
-			keyPathDerivedValueKey : \TestModel.computedValue,
-			keyPathDerivedNestedModelKey: \TestModel.computedNestedModel,
-			keyPathDerivedNestedModelCollectionKey: \TestModel.computedNestedModelCollection,
-			functionDerivedValueKey: model.functionDerivedValue(),
-			functionDerivedNestedModelKey: model.functionDerivedNestedModel(),
-			functionDerivedNestedCollectionModelKey: model.functionDerivedNestedCollectionValue(),
-			callsiteInstantiatedStringsKey: callsiteInstantiatedStrings,
-			callsiteInstantiatedModelKey: callsiteInstantiatedModel,
-			callsiteInstantiatedModelCollectionKey: callsiteInstantiatedModelCollection
-		]
+        let derivedValues: [String : Any] = [
+            computedValueKey : model.computedValue,
+            computedNestedModelKey: model.computedNestedModel,
+            computedNestedModelCollectionKey: model.computedNestedModelCollection,
+            keyPathDerivedValueKey : \TestModel.computedValue,
+            keyPathDerivedNestedModelKey: \TestModel.computedNestedModel,
+            keyPathDerivedNestedModelCollectionKey: \TestModel.computedNestedModelCollection,
+            functionDerivedValueKey: model.functionDerivedValue(),
+            functionDerivedNestedModelKey: model.functionDerivedNestedModel(),
+            functionDerivedNestedCollectionModelKey: model.functionDerivedNestedCollectionValue(),
+            callsiteInstantiatedStringsKey: callsiteInstantiatedStrings,
+            callsiteInstantiatedModelKey: callsiteInstantiatedModel,
+            callsiteInstantiatedModelCollectionKey: callsiteInstantiatedModelCollection
+        ]
 
-		let data = try model.encodeAsJSONData(including: derivedValues)
+        let data = try model.encodeAsJSONData(including: derivedValues)
 
-		let decodedModelDictionary: AnyDictionary = try data.decodeJSONAsDictionary()
+        let decodedModelDictionary: AnyDictionary = try data.decodeJSONAsDictionary()
 
-		XCTAssertEqual(decodedModelDictionary[functionDerivedValueKey] as? String, model.functionDerivedValue())
-		//TODO: Test other values
+        XCTAssertEqual(decodedModelDictionary[functionDerivedValueKey] as? String, model.functionDerivedValue())
+        //TODO: Test other values
 	}
+    
+    public func testTransformers() throws{
+        
+    }
 
 }
 
@@ -124,9 +129,9 @@ public func XCTAssertJSONEqual(source: Encodable, candidates: Encodable...) {
 }
 
 public func XCTAssertJSONNotEqual(source: Encodable, candidates: Encodable...){
-	let sourceString = try! source.encodeAsJSONString()
+	let sourceString = try! source.encodeAsJSONData()
 	for candidate in candidates{
-		XCTAssertNotEqual(sourceString, try! candidate.encodeAsJSONString())
+		XCTAssertNotEqual(sourceString, try! candidate.encodeAsJSONData())
 	}
 }
 
@@ -165,13 +170,14 @@ func areEqualPrimitiveValues(_ lhs: Any?, _ rhs: Any?) -> Bool{
 	}
 }
 
-open class TestModel: Codable{
+let originalDate = Date.init(timeIntervalSince1970: 1000)
+public class TestModel: Codable {
 	public var stringValue: String = ""
 	public var optionalStringValue: String?
 	public var intValue: Int = 0
 	public var doubleValue: Double = 0.0
 	public var booleanValue: Bool = false
-	public var dateValue: Date = Date.init(timeIntervalSince1970: 1000)
+	public var dateValue: Date = originalDate
 	public var storedNestedModel: NestedTestModel = NestedTestModel()
 	public var storedNestedModelCollection: [NestedTestModel] = [NestedTestModel(), NestedTestModel()]
 
@@ -195,19 +201,17 @@ open class TestModel: Codable{
 	public func functionDerivedNestedCollectionValue() -> [NestedTestModel]{
 		return [NestedTestModel(), NestedTestModel()]
 	}
-
-	public required init(){}
 }
 
-open class NestedTestModel: Codable{
+public class NestedTestModel: Codable {
 	public var stringValue: String = ""
 	public var optionalStringValue: String?
 	public var intValue: Int = 0
 	public var doubleValue: Double = 0.0
 	public var booleanValue: Bool = false
-	public var dateValue: Date = Date()
+	public var dateValue: Date = originalDate
 
-	public required init(){}
+
 }
 
 #if !os(Linux)
@@ -219,3 +223,37 @@ extension CLLocationCoordinate2D: ReflectionCodable{
 	}
 }
 #endif
+
+//
+//@available(OSX 10.13, *)
+//class ISO8601_to_RFC3339StringTransformer: CodableTransformer{
+//    
+//    lazy var RFC3339DateFormatter: DateFormatter = {
+//        let RFC3339DateFormatter = DateFormatter()
+//        RFC3339DateFormatter.locale = Locale(identifier: "en_US_POSIX")
+//        RFC3339DateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+//        RFC3339DateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+//        return RFC3339DateFormatter
+//    }()
+//    
+//    let iso8601DateFormatter: ISO8601DateFormatter = .iso8601
+//    
+//    public func transformEncode(from encodableType: AnyCodable) throws -> AnyCodable {
+//        guard let date = encodableType.value as? Date else {
+//            throw AnyCodableTransformationError.unexpectedTypeError(type(of: encodableType.value), Date.self)
+//        }
+//        
+//        return AnyCodable(DateFormatter().string(from: date))
+//        
+//    }
+//    
+//    public func transformDecode(from externalRepresentation: AnyCodable) throws -> AnyCodable {
+//        guard let string = externalRepresentation.value as? String else {
+//            throw AnyCodableTransformationError.unexpectedTypeError(type(of: encodableType.value), String.self)
+//        }
+//        
+//        let rfcDate = RFC3339DateFormatter.date(from: string)
+//        return AnyCodable(iso8601DateFormatter.date(from: rfcDate?.string_iso8601))
+//    }
+//    
+//}
