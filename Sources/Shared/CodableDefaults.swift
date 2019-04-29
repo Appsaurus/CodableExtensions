@@ -9,18 +9,18 @@
 import Foundation
 
 //MARK: JSONCodableDefaults
-public class CodableDefaults{
-	public static var jsonEncoder: JSONEncoder = JSONEncoder(.custom_iso8601)
-	public static var jsonDecoder: JSONDecoder = JSONDecoder(.custom_iso8601)
+//public class CodableDefaults{
+//    public static var jsonEncoder: JSONEncoder = JSONEncoder(.custom_iso8601)
+//    public static var jsonDecoder: JSONDecoder = JSONDecoder(.custom_iso8601)
+//}
+
+public extension JSONEncoder {
+	static var `default` = JSONEncoder(.custom_iso8601)
 }
 
-extension JSONEncoder {
-	static public let defaultEncoder = CodableDefaults.jsonEncoder
-}
 
-
-extension JSONDecoder {
-	static public let defaultDecoder = CodableDefaults.jsonDecoder
+public extension JSONDecoder {
+	static var `default` = JSONDecoder(.custom_iso8601)
 }
 
 extension JSONDecoder{

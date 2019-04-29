@@ -20,8 +20,8 @@ public protocol CodableTransformer: EncodableTransformationProvider, DecodableTr
 
 
 extension Encodable{
-    public func toAnyCodableDictionary(using encoder: JSONEncoder = .defaultEncoder,
-                                       using decoder: JSONDecoder = .defaultDecoder,
+    public func toAnyCodableDictionary(using encoder: JSONEncoder = .default,
+                                       using decoder: JSONDecoder = .default,
                                        withTransformers transformers: [String : CodableTransformer]) throws -> AnyCodableDictionary{
         var anyCodableDictionary = try self.toAnyCodableDictionary()
         for (key, transformer) in transformers{
@@ -32,8 +32,8 @@ extension Encodable{
         return anyCodableDictionary
     }
     
-    public func encode(using encoder: JSONEncoder = .defaultEncoder,
-                                       using decoder: JSONDecoder = .defaultDecoder,
+    public func encode(using encoder: JSONEncoder = .default,
+                                       using decoder: JSONDecoder = .default,
                                        withTransformers transformers: [String : CodableTransformer]) throws -> Data{
         return try toAnyCodableDictionary(using: encoder, using: decoder, withTransformers: transformers).encodeAsJSONData()
     }

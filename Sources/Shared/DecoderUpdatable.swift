@@ -36,7 +36,7 @@ extension Encodable{
 }
 extension Decodable {
 	@discardableResult
-	public mutating func update(with data: Data, using decoder: JSONDecoder = .defaultDecoder) throws -> Self{
+	public mutating func update(with data: Data, using decoder: JSONDecoder = .default) throws -> Self{
 		try decoder.update(&self, from: data)
 		return self
 	}

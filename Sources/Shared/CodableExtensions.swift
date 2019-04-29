@@ -19,12 +19,12 @@ extension Encodable where Self: Decodable{
 	}
 }
 extension Encodable {
-	public func encodeAsJSONData(using encoder: JSONEncoder = .defaultEncoder) throws -> Data {
+	public func encodeAsJSONData(using encoder: JSONEncoder = .default) throws -> Data {
 		return try encoder.encode(self)
 	}
 
 	//WARN: There is some precision lost on decimals: https://bugs.swift.org/browse/SR-7054
-	public func encodeAsJSONString(using encoder: JSONEncoder = .defaultEncoder, stringEncoding: String.Encoding = .utf8) throws -> String{
+	public func encodeAsJSONString(using encoder: JSONEncoder = .default, stringEncoding: String.Encoding = .utf8) throws -> String{
 		let jsonData = try encodeAsJSONData(using: encoder)
 		guard let jsonString = String(data: jsonData, encoding: stringEncoding) else{
 			let context = EncodingError.Context(codingPath: [], debugDescription: "Unable to convert data \(jsonData) from object \(self) to string.")
@@ -34,13 +34,13 @@ extension Encodable {
 	}
 
 	//Converts and encodable object -> JSON -> Dictionary.
-	public func toAnyDictionary(using encoder: JSONEncoder = .defaultEncoder, decoder: JSONDecoder = .defaultDecoder) throws -> AnyDictionary{
+	public func toAnyDictionary(using encoder: JSONEncoder = .default, decoder: JSONDecoder = .default) throws -> AnyDictionary{
 		return try encodeAsJSONData(using: encoder).decodeJSONAsDictionary(using: decoder)
 	}
 }
 
 extension Array where Element: AnyObject{
-	public func convertElementsToAnyDictionary(using encoder: JSONEncoder = .defaultEncoder, decoder: JSONDecoder = .defaultDecoder) throws -> [Any]{
+	public func convertElementsToAnyDictionary(using encoder: JSONEncoder = .default, decoder: JSONDecoder = .default) throws -> [Any]{
 			var convertedArray: [Any] = []
 			for element in self{
 				if let encodableElement = element as? Encodable{
@@ -66,11 +66,13 @@ extension Encodable {
 	/// - Returns: JSON data.
 	/// - Throws: EndcodingError if any of the derived values are not able to resovle an encodable value.
 	public func encodeAsJSONData(including derivedValues: [String : Any],
-								 using encoder: JSONEncoder = .defaultEncoder,
-								 using decoder: JSONDecoder = .defaultDecoder) throws -> Data {
+								 using encoder: JSONEncoder = .default,
+								 using decoder: JSONDecoder = .default) throws -> Data {
+        print("ENCODING ***************")
 		var dictionary = try toAnyCodableDictionary(using: encoder, using: decoder)
 		let derivedValues = derivedValues
 		for (key, value) in derivedValues{
+            print("Key \(key), Value: \(value)")
 			var value = value
 			switch value{
 			case let encodableFunction as () -> Any:
@@ -83,40 +85,44 @@ extension Encodable {
 			switch value{
 			case let arrayValue as Array<AnyObject>:
 				//Convert arrays of encodable objects to dictionary representations
-				value = try arrayValue.convertElementsToAnyDictionary(using: encoder, decoder: decoder)
+                print("Array \(arrayValue)")
+				value = [try arrayValue.convertElementsToAnyDictionary(using: encoder, decoder: decoder)]
 			case let encodableValue as AnyObject & Encodable:
+                print("Object \(encodableValue)")
 				value = try encodableValue.toAnyDictionary()
 			default: break
 			}
+            print("After switch")
 			dictionary[key] = AnyCodable.wrap(value)
 		}
+        print("After everything")
 		return try dictionary.encodeAsJSONData(using: encoder)
 	}
 }
 
 extension Decodable {
-	static public func decode(fromJSON data: Data, using decoder: JSONDecoder = .defaultDecoder) throws -> Self {
+	static public func decode(fromJSON data: Data, using decoder: JSONDecoder = .default) throws -> Self {
 		return try decoder.decode(Self.self, from: data)
 	}
 
-	static public func decode(fromJSON string: String, using decoder: JSONDecoder = .defaultDecoder) throws -> Self {
+	static public func decode(fromJSON string: String, using decoder: JSONDecoder = .default) throws -> Self {
 		return try decoder.decode(Self.self, from: try string.encodeAsJSONData())
 	}
 }
 
 extension Data{
-	public func decodeJSONAsDictionary(using decoder: JSONDecoder = .defaultDecoder, decodeNestedObjectsAsDictionaries: Bool = true) throws -> AnyDictionary {
+	public func decodeJSONAsDictionary(using decoder: JSONDecoder = .default, decodeNestedObjectsAsDictionaries: Bool = true) throws -> AnyDictionary {
 		let decodableDictionary: AnyCodableDictionary = try decoder.decode(AnyCodableDictionary.self, from: self)
 		let unwrappedDictionary = decodableDictionary.anyCodableUnwrapped()
 		return unwrappedDictionary
 	}
 
-	public func decodeJSONAsArrayOfDictionaries(using decoder: JSONDecoder = .defaultDecoder) throws -> [AnyDictionary] {
+	public func decodeJSONAsArrayOfDictionaries(using decoder: JSONDecoder = .default) throws -> [AnyDictionary] {
 		let decodableDictionary: [AnyCodableDictionary] = try decoder.decode([AnyCodableDictionary].self, from: self)
 		return decodableDictionary.map({$0.anyCodableUnwrapped()})
 	}
 
-	public func decodeJSON<D: Decodable>(as type: D.Type = D.self, using decoder: JSONDecoder = .defaultDecoder) throws -> D{
+	public func decodeJSON<D: Decodable>(as type: D.Type = D.self, using decoder: JSONDecoder = .default) throws -> D{
 		return try type.decode(fromJSON: self, using: decoder)
 	}
 }
@@ -155,7 +161,7 @@ extension String{
 
 extension Dictionary where Key == String, Value: Any {
 
-	public func encodeAsJSONData(using encoder: JSONEncoder = .defaultEncoder) throws -> Data {
+	public func encodeAsJSONData(using encoder: JSONEncoder = .default) throws -> Data {
 		let anyCodableDictionary: AnyCodableDictionary = try self.toAnyCodableDictionary()
 		return try encoder.encode(anyCodableDictionary)
 	}
