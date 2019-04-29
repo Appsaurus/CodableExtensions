@@ -68,11 +68,9 @@ extension Encodable {
 	public func encodeAsJSONData(including derivedValues: [String : Any],
 								 using encoder: JSONEncoder = .default,
 								 using decoder: JSONDecoder = .default) throws -> Data {
-        print("ENCODING ***************")
 		var dictionary = try toAnyCodableDictionary(using: encoder, using: decoder)
 		let derivedValues = derivedValues
 		for (key, value) in derivedValues{
-            print("Key \(key), Value: \(value)")
 			var value = value
 			switch value{
 			case let encodableFunction as () -> Any:
@@ -84,18 +82,13 @@ extension Encodable {
 
 			switch value{
 			case let arrayValue as Array<AnyObject>:
-				//Convert arrays of encodable objects to dictionary representations
-                print("Array \(arrayValue)")
-				value = [try arrayValue.convertElementsToAnyDictionary(using: encoder, decoder: decoder)]
+				value = try arrayValue.convertElementsToAnyDictionary(using: encoder, decoder: decoder)
 			case let encodableValue as AnyObject & Encodable:
-                print("Object \(encodableValue)")
 				value = try encodableValue.toAnyDictionary()
 			default: break
 			}
-            print("After switch")
 			dictionary[key] = AnyCodable.wrap(value)
 		}
-        print("After everything")
 		return try dictionary.encodeAsJSONData(using: encoder)
 	}
 }
