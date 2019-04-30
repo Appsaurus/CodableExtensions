@@ -24,5 +24,5 @@ Pod::Spec.new do |s|
   s.dependency 'RuntimeExtensions'
   s.dependency 'Codability'
 
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.1' }
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
 end
