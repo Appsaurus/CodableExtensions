@@ -12,41 +12,42 @@ import SwiftTestUtils
 import CodableExtensions
 import RuntimeExtensions
 import Codability
+
 #if !os(Linux)
 import CoreLocation
 #endif
 class CodableExtensionsTests: BaseTestCase{
 
-	//MARK: Linux Testing
-	static var allTests = [
-		("testLinuxTestSuiteIncludesAllTests", testLinuxTestSuiteIncludesAllTests),
-		("testDecodeDictionaryFromData", testDecodeDictionaryFromData),
-		("testDecoderUpdatable", testDecoderUpdatable),
-		("testReflectionCoding", testReflectionCoding),
-		("testDerivedValueEncoding", testDerivedValueEncoding),
+    //MARK: Linux Testing
+    static var allTests = [
+        ("testLinuxTestSuiteIncludesAllTests", testLinuxTestSuiteIncludesAllTests),
+        ("testDecodeDictionaryFromData", testDecodeDictionaryFromData),
+        ("testDecoderUpdatable", testDecoderUpdatable),
+        ("testReflectionCoding", testReflectionCoding),
+        ("testDerivedValueEncoding", testDerivedValueEncoding),
         ("testTransformers", testTransformers)
-	]
+    ]
 
-	func testLinuxTestSuiteIncludesAllTests(){
-		assertLinuxTestCoverage(tests: type(of: self).allTests)
-	}
-	lazy var testDictionary: AnyDictionary = {
-		return ["stringValue" : "updatedStringValue",
-				"optionalStringValue" : "updatedOptionalStringValue",
-				"intValue" : 1,
-				"doubleValue" : 3.1,
-				"booleanValue" : true
-		]
-	}()
+    func testLinuxTestSuiteIncludesAllTests(){
+        assertLinuxTestCoverage(tests: type(of: self).allTests)
+    }
+    lazy var primitiveDictionary: AnyDictionary = {
+        return ["stringValue" : "updatedStringValue",
+                "optionalStringValue" : "updatedOptionalStringValue",
+                "intValue" : 1,
+                "doubleValue" : 3.1,
+                "booleanValue" : true
+        ]
+    }()
 
-	lazy var encodedTestDictionary: Data = try! testDictionary.encodeAsJSONData()
+    lazy var encodedTestDictionary: Data = try! primitiveDictionary.encodeAsJSONData()
 
-	public func testDecodeDictionaryFromData() throws{
-		let decodedDictionary: AnyDictionary = try encodedTestDictionary.decodeJSONAsDictionary()
-		XCTAssertEqualPrimitiveValues(source: decodedDictionary, candidates: testDictionary.anyCodableUnwrapped())
-	}
+    public func testDecodeDictionaryFromData() throws{
+        let decodedDictionary: AnyDictionary = try encodedTestDictionary.decodeJSONAsDictionary()
+        XCTAssertEqualPrimitiveValues(source: decodedDictionary, candidates: primitiveDictionary)
+    }
 
-	public func testDecoderUpdatable() throws{
+    public func testDecoderUpdatable() throws{
         let original: TestModel = .init()
         var updated: TestModel = .init()
 
@@ -64,26 +65,25 @@ class CodableExtensionsTests: BaseTestCase{
         XCTAssertNotEqual(original.doubleValue, updated.doubleValue)
         XCTAssertNotEqual(original.booleanValue, updated.booleanValue)
 
-        XCTAssertEqual(testDictionary["stringValue"] as! String, updated.stringValue)
-        XCTAssertEqual(testDictionary["optionalStringValue"] as! String?, updated.optionalStringValue)
-        XCTAssertEqual(testDictionary["intValue"] as! Int, updated.intValue)
-        XCTAssertEqual(testDictionary["doubleValue"] as! Double, updated.doubleValue)
-        XCTAssertEqual(testDictionary["booleanValue"] as! Bool, updated.booleanValue)
+        XCTAssertEqual(primitiveDictionary["stringValue"] as! String, updated.stringValue)
+        XCTAssertEqual(primitiveDictionary["optionalStringValue"] as! String?, updated.optionalStringValue)
+        XCTAssertEqual(primitiveDictionary["intValue"] as! Int, updated.intValue)
+        XCTAssertEqual(primitiveDictionary["doubleValue"] as! Double, updated.doubleValue)
+        XCTAssertEqual(primitiveDictionary["booleanValue"] as! Bool, updated.booleanValue)
 
-	}
+    }
 
-	public func testReflectionCoding() throws{
-		#if !os(Linux)
-		let coordinate = CLLocationCoordinate2D(latitude: 25.0000, longitude: 71.0000)
-		let encodedCoordinate = try coordinate.encodeAsJSONData()
-		let decodedCoordinate: CLLocationCoordinate2D = try encodedCoordinate.decodeJSON()
-		XCTAssertEqual(coordinate.latitude, decodedCoordinate.latitude)
-		XCTAssertEqual(coordinate.longitude, decodedCoordinate.longitude)
-		#endif
-	}
-
-	public func testDerivedValueEncoding() throws{
+    public func testReflectionCoding() throws{
         #if !os(Linux)
+        let coordinate = CLLocationCoordinate2D(latitude: 25.0000, longitude: 71.0000)
+        let encodedCoordinate = try coordinate.encodeAsJSONData()
+        let decodedCoordinate: CLLocationCoordinate2D = try encodedCoordinate.decodeJSON()
+        XCTAssertEqual(coordinate.latitude, decodedCoordinate.latitude)
+        XCTAssertEqual(coordinate.longitude, decodedCoordinate.longitude)
+        #endif
+    }
+
+    public func testDerivedValueEncoding() throws{
         let model = TestModel()
         let computedValueKey: String = "computedValueKey"
         let computedNestedModelKey: String = "computedNestedModelKey"
@@ -97,11 +97,11 @@ class CodableExtensionsTests: BaseTestCase{
         //Derived from model functions
         let functionDerivedValueKey: String = "functionDerivedValueKey"
         let functionDerivedNestedModelKey: String = "functionDerivedNestedModelKey"
-        let functionDerivedNestedCollectionModelKey: String = "functionDerivedNestedCollectionModelKey"
+        let functionDerivedNestedModelCollectionKey: String = "functionDerivedNestedModelCollectionKey"
 
         //Callsite instantiated
 
-        let callsiteInstantiatedStringsKey = "callsiteInstantiatedStrings"
+        let callsiteInstantiatedStringsKey = "callsiteInstantiatedStringsKey"
         let callsiteInstantiatedStrings = ["derived", "derived", "derived"]
 
         let callsiteInstantiatedModelKey: String = "callsiteInstantiatedModelKey"
@@ -119,137 +119,116 @@ class CodableExtensionsTests: BaseTestCase{
             keyPathDerivedNestedModelCollectionKey: \TestModel.computedNestedModelCollection,
             functionDerivedValueKey: model.functionDerivedValue(),
             functionDerivedNestedModelKey: model.functionDerivedNestedModel(),
-            functionDerivedNestedCollectionModelKey: model.functionDerivedNestedCollectionValue(),
+            functionDerivedNestedModelCollectionKey: model.functionDerivedNestedCollectionValue(),
             callsiteInstantiatedStringsKey: callsiteInstantiatedStrings,
             callsiteInstantiatedModelKey: callsiteInstantiatedModel,
             callsiteInstantiatedModelCollectionKey: callsiteInstantiatedModelCollection
         ]
 
         let data = try model.encodeAsJSONData(including: derivedValues)
+        let extendedTestModel = try ExtendedTestModel.decode(fromJSON: data)
         let decodedModelDictionary: AnyDictionary = try data.decodeJSONAsDictionary()
 
-//        XCTAssertEqual(decodedModelDictionary[computedValueKey] as! String, model.computedValue)
-//        XCTAssertEqual(decodedModelDictionary[computedNestedModelKey] as! NestedTestModel, model.computedNestedModel)
-//        XCTAssertEqual(decodedModelDictionary[computedNestedModelCollectionKey] as! [NestedTestModel], model.computedNestedModelCollection)
-//        XCTAssertEqual(decodedModelDictionary[keyPathDerivedValueKey] as! String,  model.computedValue)
-//        XCTAssertEqual(decodedModelDictionary[keyPathDerivedNestedModelKey] as! NestedTestModel, model.computedNestedModel)
-//        XCTAssertEqual(decodedModelDictionary[keyPathDerivedNestedModelCollectionKey] as! [NestedTestModel], model.computedNestedModelCollection)
-//        XCTAssertEqual(decodedModelDictionary[functionDerivedValueKey] as! String , model.functionDerivedValue())
-//        XCTAssertEqual(decodedModelDictionary[functionDerivedNestedModelKey] as! NestedTestModel, model.functionDerivedNestedModel())
-//        XCTAssertEqual(decodedModelDictionary[functionDerivedNestedCollectionModelKey] as! [NestedTestModel], model.functionDerivedNestedCollectionValue())
-//        XCTAssertEqual(decodedModelDictionary[callsiteInstantiatedStringsKey] as! [String], callsiteInstantiatedStrings)
-//        XCTAssertEqual(decodedModelDictionary[callsiteInstantiatedModelKey] as! NestedTestModel , callsiteInstantiatedModel)
-//        XCTAssertEqual(decodedModelDictionary[callsiteInstantiatedModelCollectionKey] as! [NestedTestModel], callsiteInstantiatedModelCollection)
 
-        #endif
-	}
-    
+        XCTAssertEqual(extendedTestModel.stringValue, model.stringValue)
+        XCTAssertEqual(extendedTestModel.optionalStringValue, model.optionalStringValue)
+        XCTAssertEqual(extendedTestModel.intValue, model.intValue)
+        XCTAssertEqual(extendedTestModel.doubleValue, model.doubleValue)
+        XCTAssertEqual(extendedTestModel.booleanValue, model.booleanValue)
+        XCTAssertEqual(extendedTestModel.dateValue, model.dateValue)
+        XCTAssertEqual(extendedTestModel.storedNestedModel, model.storedNestedModel)
+        XCTAssertEqual(extendedTestModel.storedNestedModelCollection, model.storedNestedModelCollection)
+        XCTAssertEqual(extendedTestModel.computedValueKey, model.computedValue)
+        XCTAssertEqual(extendedTestModel.computedNestedModelKey, model.computedNestedModel)
+        XCTAssertEqual(extendedTestModel.computedNestedModelCollectionKey, model.computedNestedModelCollection)
+        XCTAssertEqual(extendedTestModel.keyPathDerivedValueKey, model.computedValue)
+        XCTAssertEqual(extendedTestModel.keyPathDerivedNestedModelKey, model.computedNestedModel)
+        XCTAssertEqual(extendedTestModel.keyPathDerivedNestedModelCollectionKey, model.computedNestedModelCollection)
+        XCTAssertEqual(extendedTestModel.functionDerivedValueKey, model.functionDerivedValue())
+        XCTAssertEqual(extendedTestModel.functionDerivedNestedModelKey, model.functionDerivedNestedModel())
+        XCTAssertEqual(extendedTestModel.functionDerivedNestedModelCollectionKey, model.functionDerivedNestedCollectionValue())
+        XCTAssertEqual(extendedTestModel.callsiteInstantiatedStringsKey, callsiteInstantiatedStrings)
+        XCTAssertEqual(extendedTestModel.callsiteInstantiatedModelKey, callsiteInstantiatedModel)
+        XCTAssertEqual(extendedTestModel.callsiteInstantiatedModelCollectionKey, callsiteInstantiatedModelCollection)
+
+
+        //        XCTAssertEqual(decodedModelDictionary[computedValueKey] as! String, model.computedValue)
+        //        XCTAssertEqual(decodedModelDictionary[computedNestedModelKey] as! NestedTestModel, model.computedNestedModel)
+        //        XCTAssertEqual(decodedModelDictionary[computedNestedModelCollectionKey] as! [NestedTestModel], model.computedNestedModelCollection)
+        //        XCTAssertEqual(decodedModelDictionary[keyPathDerivedValueKey] as! String,  model.computedValue)
+        //        XCTAssertEqual(decodedModelDictionary[keyPathDerivedNestedModelKey] as! NestedTestModel, model.computedNestedModel)
+        //        XCTAssertEqual(decodedModelDictionary[keyPathDerivedNestedModelCollectionKey] as! [NestedTestModel], model.computedNestedModelCollection)
+        //        XCTAssertEqual(decodedModelDictionary[functionDerivedValueKey] as! String , model.functionDerivedValue())
+        //        XCTAssertEqual(decodedModelDictionary[functionDerivedNestedModelKey] as! NestedTestModel, model.functionDerivedNestedModel())
+        //        XCTAssertEqual(decodedModelDictionary[functionDerivedNestedModelCollectionKey] as! [NestedTestModel], model.functionDerivedNestedCollectionValue())
+        //        XCTAssertEqual(decodedModelDictionary[callsiteInstantiatedStringsKey] as! [String], callsiteInstantiatedStrings)
+        //        XCTAssertEqual(decodedModelDictionary[callsiteInstantiatedModelKey] as! NestedTestModel , callsiteInstantiatedModel)
+        //        XCTAssertEqual(decodedModelDictionary[callsiteInstantiatedModelCollectionKey] as! [NestedTestModel], callsiteInstantiatedModelCollection)
+
+    }
+
     public func testTransformers() throws{
-        
+
     }
 
 }
 
+extension Encodable{
+    public func jsonIsEqual(to candidates: [Encodable]) -> Bool{
+        let sourceJson = try! encodeAsJSONData()
+        return !candidates.contains(where: {try! $0.encodeAsJSONData() != sourceJson})
+    }
+}
 public func XCTAssertJSONEqual(source: Encodable, candidates: Encodable...) {
-	let sourceString = try! source.encodeAsJSONString()
-	for candidate in candidates{
-		XCTAssertEqual(sourceString, try! candidate.encodeAsJSONString())
-	}
+    let sourceString = try! source.encodeAsJSONString()
+    for candidate in candidates{
+        XCTAssertEqual(sourceString, try! candidate.encodeAsJSONString())
+    }
 }
 
 public func XCTAssertJSONNotEqual(source: Encodable, candidates: Encodable...){
-	let sourceString = try! source.encodeAsJSONData()
-	for candidate in candidates{
-		XCTAssertNotEqual(sourceString, try! candidate.encodeAsJSONData())
-	}
+    let sourceString = try! source.encodeAsJSONData()
+    for candidate in candidates{
+        XCTAssertNotEqual(sourceString, try! candidate.encodeAsJSONData())
+    }
 }
 
 public func XCTAssertEqualPrimitiveValues(source: Any?, candidates: Any?...){
-	for candidate in candidates{
-		XCTAssert(areEqualPrimitiveValues(source, candidate))
-	}
+    for candidate in candidates{
+        XCTAssert(areEqualPrimitiveValues(source, candidate))
+    }
 }
 
 func areEqualPrimitiveValues(_ lhs: Any?, _ rhs: Any?) -> Bool{
-	guard let a = lhs, let b = rhs else{
-		return lhs == nil && rhs == nil
-	}
-	switch (a, b) {
-	case let (aVal as Bool, bVal as Bool):
-		return aVal == bVal
-	case let (aVal as Date, bVal as Date):
-		return aVal == bVal
-	case let (aVal as Int, bVal as Int):
-		return aVal == bVal
-	case let (aVal as Double, bVal as Double):
-		return aVal == bVal
-	case let (aVal as String, bVal as String):
-		return aVal == bVal
-	case let (aVal as AnyDictionary, bVal as AnyDictionary):
-		var equal = true
-		for (key, value) in aVal{
-			equal = areEqualPrimitiveValues(value, bVal[key])
-			if !equal{
-				return false
-			}
-		}
-		return true
-	default:
-		return false
-	}
+    guard let a = lhs, let b = rhs else{
+        return lhs == nil && rhs == nil
+    }
+    switch (a, b) {
+    case let (aVal as Bool, bVal as Bool):
+        return aVal == bVal
+    case let (aVal as Date, bVal as Date):
+        return aVal == bVal
+    case let (aVal as Int, bVal as Int):
+        return aVal == bVal
+    case let (aVal as Double, bVal as Double):
+        return aVal == bVal
+    case let (aVal as String, bVal as String):
+        return aVal == bVal
+    case let (aVal as AnyDictionary, bVal as AnyDictionary):
+        var equal = true
+        for (key, value) in aVal{
+            equal = areEqualPrimitiveValues(value, bVal[key])
+            if !equal{
+                return false
+            }
+        }
+        return true
+    default:
+        return false
+    }
 }
 
-let originalDate = Date.init(timeIntervalSince1970: 1000)
-public class TestModel: Codable {
-	public var stringValue: String = ""
-	public var optionalStringValue: String?
-	public var intValue: Int = 0
-	public var doubleValue: Double = 0.0
-	public var booleanValue: Bool = false
-	public var dateValue: Date = originalDate
-	public var storedNestedModel: NestedTestModel = NestedTestModel()
-	public var storedNestedModelCollection: [NestedTestModel] = [NestedTestModel(), NestedTestModel()]
 
-	public var computedValue: String{
-		return "derivedValue"
-	}
-
-	public var computedNestedModel: NestedTestModel{
-		return NestedTestModel()
-	}
-
-	public var computedNestedModelCollection: [NestedTestModel]{
-		return [NestedTestModel(), NestedTestModel()]
-	}
-	public func functionDerivedValue() -> String{
-		return "functionDerivedValue"
-	}
-	public func functionDerivedNestedModel() -> NestedTestModel{
-		return NestedTestModel()
-	}
-	public func functionDerivedNestedCollectionValue() -> [NestedTestModel]{
-		return [NestedTestModel(), NestedTestModel()]
-	}
-}
-
-public struct NestedTestModel: Codable, Equatable {
-	public var stringValue: String = ""
-	public var optionalStringValue: String?
-	public var intValue: Int = 0
-	public var doubleValue: Double = 0.0
-	public var booleanValue: Bool = false
-	public var dateValue: Date = originalDate
-}
-
-#if !os(Linux)
-extension CLLocationCoordinate2D: ReflectionCodable{
-
-	public init(from decoder: Decoder) throws {
-		self.init()
-		try decodeReflectively(from: decoder)
-	}
-}
-#endif
 
 //
 //@available(OSX 10.13, *)
