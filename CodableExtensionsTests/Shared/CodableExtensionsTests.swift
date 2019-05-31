@@ -11,7 +11,6 @@ import XCTest
 import SwiftTestUtils
 import CodableExtensions
 import RuntimeExtensions
-import Codability
 
 #if !os(Linux)
 import CoreLocation
@@ -25,7 +24,11 @@ class CodableExtensionsTests: BaseTestCase{
         ("testDecoderUpdatable", testDecoderUpdatable),
         ("testReflectionCoding", testReflectionCoding),
         ("testDerivedValueEncoding", testDerivedValueEncoding),
-        ("testTransformers", testTransformers)
+        ("testTransformers", testTransformers),
+        ("testDecodeSimpleParameter", testDecodeSimpleParameter),
+        ("testDecodeOptionalParameter", testDecodeOptionalParameter),
+        ("testDecodeEmptyOptionalParameter", testDecodeEmptyOptionalParameter),
+        ("testEncodeSimpleParameter", testEncodeSimpleParameter)
     ]
 
     func testLinuxTestSuiteIncludesAllTests(){
@@ -169,6 +172,75 @@ class CodableExtensionsTests: BaseTestCase{
 
     public func testTransformers() throws{
 
+    }
+
+    func testDecodeSimpleParameter() throws {
+        struct Parameter: Codable {
+            let string: String
+            let int: Int
+            let double: Double
+        }
+        let params: [URLQueryItem] = [
+            URLQueryItem(name: "string", value: "abc"),
+            URLQueryItem(name: "int", value: "123"),
+            URLQueryItem(name: "double", value: Double.pi.description)
+        ]
+        let parameter = try Parameter.decode(from: params)
+
+        XCTAssertEqual(parameter.string, params[0].value)
+        XCTAssertEqual(parameter.int.description, params[1].value)
+        XCTAssertEqual(parameter.double.description, params[2].value)
+
+    }
+
+    func testDecodeOptionalParameter() throws {
+        struct Parameter: Codable {
+            let string: String?
+            let int: Int?
+            let double: Double?
+        }
+        let params: [URLQueryItem] = [
+            URLQueryItem(name: "string", value: "abc"),
+            URLQueryItem(name: "double", value: Double.pi.description)
+        ]
+        let parameter = try Parameter.decode(from: params)
+
+        XCTAssertEqual(parameter.string, params[0].value)
+        XCTAssertEqual(parameter.int?.description, nil)
+        XCTAssertEqual(parameter.double?.description, params[1].value)
+    }
+
+    func testDecodeEmptyOptionalParameter() throws {
+        struct Parameter: Codable {
+            let string: String?
+            let int: Int?
+            let double: Double?
+        }
+         let parameter = try Parameter.decode(from: [])
+
+        XCTAssertEqual(parameter.string, nil)
+        XCTAssertEqual(parameter.int, nil)
+        XCTAssertEqual(parameter.double, nil)
+    }
+
+    func testEncodeSimpleParameter() throws {
+        struct Parameter: Codable {
+            let query: String
+            let offset: Int
+            let limit: Int
+        }
+        let parameter = Parameter(query: "ねこ", offset: 10, limit: 20)
+        let params: [URLQueryItem] = try parameter.encodeAsURLQueryItems()
+        XCTAssertEqual("query", params[0].name)
+        XCTAssertEqual(parameter.query, params[0].value)
+        XCTAssertEqual("offset", params[1].name)
+        XCTAssertEqual(parameter.offset.description, params[1].value)
+        XCTAssertEqual("limit", params[2].name)
+        XCTAssertEqual(parameter.limit.description, params[2].value)
+
+        var components = URLComponents(string: "https://example.com")
+        components?.queryItems = params
+        XCTAssertEqual(components?.url?.absoluteString, "https://example.com?query=%E3%81%AD%E3%81%93&offset=10&limit=20")
     }
 
 }

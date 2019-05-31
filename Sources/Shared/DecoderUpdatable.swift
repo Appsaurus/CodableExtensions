@@ -29,14 +29,10 @@ public enum DecoderUpdatingOptionalStrategy{
 	case requireExplicitNull
 	case interpretMissingKeyAsNull
 }
-extension Encodable{
-//	public func encodeReflectively(to encoder: Encoder) throws{
-//		try reflectToDictionary(object: self).toAnyCodableDictionary().encode(to: encoder)
-//	}
-}
+
 extension Decodable {
 	@discardableResult
-	public mutating func update(with data: Data, using decoder: JSONDecoder = .default) throws -> Self{
+	public mutating func update(with data: Data, decoder: JSONDecoder = .default) throws -> Self{
 		try decoder.update(&self, from: data)
 		return self
 	}

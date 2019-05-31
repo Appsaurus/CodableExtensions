@@ -38,8 +38,8 @@ extension AnyCodable{
 }
 
 extension Encodable{
-	public func toAnyCodableDictionary(using encoder: JSONEncoder = .default, using decoder: JSONDecoder = .default) throws -> AnyCodableDictionary{
-		return try toAnyDictionary(using: encoder, decoder: decoder).toAnyCodableDictionary()
+	public func toAnyCodableDictionary(encoder: JSONEncoder = .default, decoder: JSONDecoder = .default) throws -> AnyCodableDictionary{
+		return try toAnyDictionary(encoder: encoder, decoder: decoder).toAnyCodableDictionary()
 	}
 
 	public func wrapAsAnyCodable() -> AnyCodable{
