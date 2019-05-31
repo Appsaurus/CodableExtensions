@@ -39,21 +39,6 @@ extension Encodable {
     }
 }
 
-
-//public enum DictionaryEncodingError: Error{
-//    case unexpectedTypeError(Any.Type, Any.Type)
-//}
-//extension Encodable {
-//    func dictionary(encoder: JSONEncoder = .default) throws -> AnyDictionary {
-//        let jsonData = try encodeAsJSONData(using: encoder)
-//        let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
-//        guard let dict = jsonObject as? AnyDictionary else {
-//            throw DictionaryEncodingError.unexpectedTypeError(AnyDictionary.self, type(of: jsonObject))
-//        }
-//        return dict
-//    }
-//}
-
 public extension EncodingError {
     static func dynamicEncodingError(invalidValue: Any) -> EncodingError {
         let contextDescription = "Attempted to encode an invalid value \(invalidValue)."

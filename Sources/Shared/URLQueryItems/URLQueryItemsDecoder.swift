@@ -1,9 +1,11 @@
 //
-//  URLQueryItemDecoder.swift
+//  URLQueryItemsDecoder.swift
 //  CodableExtensions
 //
-//  Created by Brian Strobach on 5/30/19.
+//  Created by Tatsuya Tanaka on 20180212.
+//  Copyright © 2018年 tattn. All rights reserved.
 //
+// Adapted from origial implementation: https://github.com/tattn/MoreCodable
 
 import Foundation
 

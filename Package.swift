@@ -11,7 +11,7 @@ let package = Package(
 	dependencies: [
 		.package(url: "https://github.com/yonaskolb/Codability.git", from: "0.2.0"),
 		.package(url: "https://github.com/Appsaurus/RuntimeExtensions",  from: "0.1.0"),
-		.package(url: "https://github.com/Appsaurus/SwiftTestUtils",  from: "1.0.0"),
+		.package(url: "https://github.com/Appsaurus/SwiftTestUtils",  from: "1.0.0")
 	],
 	targets: [
 		.target(name: "CodableExtensions", dependencies: ["RuntimeExtensions", "Codability"], path: "./Sources/Shared"),
