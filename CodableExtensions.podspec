@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "CodableExtensions"
   s.summary          = "A short description of CodableExtensions."
-  s.version          = "1.0.3"
+  s.version          = "1.0.4"
   s.homepage         = "github.com/Appsaurus/CodableExtensions"
   s.license          = 'MIT'
   s.author           = { "Brian Strobach" => "brian@appsaurus.io" }
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
     :tag => s.version.to_s
   }
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
   s.osx.deployment_target = '10.12'
   s.tvos.deployment_target = '9.2'
   s.watchos.deployment_target = "3.0"
@@ -23,7 +23,6 @@ Pod::Spec.new do |s|
 
   s.dependency 'RuntimeExtensions'
   s.dependency 'Codability'
-  s.dependency 'MoreCodable'
 
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
 end
