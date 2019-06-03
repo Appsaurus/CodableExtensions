@@ -11,12 +11,12 @@ import Foundation
 //MARK: JSONCodableDefaults
 
 public extension JSONEncoder {
-	static var `default` = JSONEncoder(.custom_iso8601)
+	static var `default` = JSONEncoder(.iso8601)
 }
 
 
 public extension JSONDecoder {
-	static var `default` = JSONDecoder(.custom_iso8601)
+	static var `default` = JSONDecoder(.iso8601)
 }
 
 extension JSONDecoder{
