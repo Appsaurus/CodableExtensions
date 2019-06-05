@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "CodableExtensions"
   s.summary          = "A short description of CodableExtensions."
-  s.version          = "1.0.4"
+  s.version          = "1.0.5"
   s.homepage         = "github.com/Appsaurus/CodableExtensions"
   s.license          = 'MIT'
   s.author           = { "Brian Strobach" => "brian@appsaurus.io" }
@@ -23,7 +23,6 @@ Pod::Spec.new do |s|
 
   s.dependency 'RuntimeExtensions'
   s.dependency 'Codability'
-  s.dependnecy 'URLQueryItemEncoder'
 
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '5.0' }
 end
