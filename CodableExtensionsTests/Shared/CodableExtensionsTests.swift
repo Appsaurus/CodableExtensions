@@ -179,17 +179,22 @@ class CodableExtensionsTests: BaseTestCase{
             let string: String
             let int: Int
             let double: Double
+            let date: Date
         }
-        let params: [URLQueryItem] = [
-            URLQueryItem(name: "string", value: "abc"),
-            URLQueryItem(name: "int", value: "123"),
-            URLQueryItem(name: "double", value: Double.pi.description)
-        ]
-        let parameter = try Parameter.decode(from: params)
+        let stringValue = "string"
+        let intValue = 123
+        let doubleValue = Double.pi
+        let date = Date()
 
-        XCTAssertEqual(parameter.string, params[0].value)
-        XCTAssertEqual(parameter.int.description, params[1].value)
-        XCTAssertEqual(parameter.double.description, params[2].value)
+        let parameter = Parameter(string: stringValue, int: intValue, double: doubleValue, date: date)
+        let queryItems: [URLQueryItem] = try parameter.encodeAsURLQueryItems()
+
+        let parameterDecoded = try Parameter.decode(fromQueryItems: queryItems)
+
+        XCTAssertEqual(parameterDecoded.string, parameter.string)
+        XCTAssertEqual(parameterDecoded.int, parameter.int)
+        XCTAssertEqual(parameterDecoded.double, parameter.double)
+        XCTAssertEqual(parameterDecoded.date.description, parameter.date.description)
 
     }
 
@@ -199,15 +204,16 @@ class CodableExtensionsTests: BaseTestCase{
             let int: Int?
             let double: Double?
         }
-        let params: [URLQueryItem] = [
-            URLQueryItem(name: "string", value: "abc"),
-            URLQueryItem(name: "double", value: Double.pi.description)
-        ]
-        let parameter = try Parameter.decode(from: params)
 
-        XCTAssertEqual(parameter.string, params[0].value)
-        XCTAssertEqual(parameter.int?.description, nil)
-        XCTAssertEqual(parameter.double?.description, params[1].value)
+        let stringValue = "string"
+        let doubleValue = Double.pi
+        let parameter = Parameter(string: stringValue, int: nil, double: doubleValue)
+        let params: [URLQueryItem] = try parameter.encodeAsURLQueryItems()
+        let parameterDecoded = try Parameter.decode(fromQueryItems: params)
+
+        XCTAssertEqual(parameterDecoded.string, parameter.string)
+        XCTAssertEqual(parameterDecoded.int, parameter.int)
+        XCTAssertEqual(parameterDecoded.double, parameter.double)
     }
 
     func testDecodeEmptyOptionalParameter() throws {
@@ -216,7 +222,7 @@ class CodableExtensionsTests: BaseTestCase{
             let int: Int?
             let double: Double?
         }
-         let parameter = try Parameter.decode(from: [])
+         let parameter = try Parameter.decode(fromQueryItems: [])
 
         XCTAssertEqual(parameter.string, nil)
         XCTAssertEqual(parameter.int, nil)

@@ -31,7 +31,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		E46CB14F22A0E6580013D8B4 /* Codable+URLQueryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46CB14E22A0E6580013D8B4 /* Codable+URLQueryItems.swift */; };
+		E414F0A422A8075400AD0F94 /* URLQueryItemEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414F0A322A8075400AD0F94 /* URLQueryItemEncoder.swift */; };
+		E414F0A722A808CF00AD0F94 /* Encodable+URLQueryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414F0A622A808CF00AD0F94 /* Encodable+URLQueryItems.swift */; };
+		E46CB14F22A0E6580013D8B4 /* Decodable+URLQueryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46CB14E22A0E6580013D8B4 /* Decodable+URLQueryItems.swift */; };
 		OBJ_127 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_93 /* AnyCodable.swift */; };
 		OBJ_128 /* GenericDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_94 /* GenericDecodingContainer.swift */; };
 		OBJ_129 /* InvalidElementStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_95 /* InvalidElementStrategy.swift */; };
@@ -45,10 +47,6 @@
 		OBJ_149 /* CodableTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* CodableTransformer.swift */; };
 		OBJ_150 /* DecoderUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* DecoderUpdatable.swift */; };
 		OBJ_151 /* ReflectionCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* ReflectionCodable.swift */; };
-		OBJ_152 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Storage.swift */; };
-		OBJ_153 /* URLQueryItem+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* URLQueryItem+Codable.swift */; };
-		OBJ_154 /* URLQueryItemsDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* URLQueryItemsDecoder.swift */; };
-		OBJ_155 /* URLQueryItemsEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* URLQueryItemsEncoder.swift */; };
 		OBJ_157 /* Codability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Codability::Codability::Product" /* Codability.framework */; };
 		OBJ_158 /* RuntimeExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "RuntimeExtensions::RuntimeExtensions::Product" /* RuntimeExtensions.framework */; };
 		OBJ_159 /* Runtime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Runtime::Runtime::Product" /* Runtime.framework */; };
@@ -196,7 +194,9 @@
 		"Codability::Codability::Product" /* Codability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Codability.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CodableExtensions::CodableExtensions::Product" /* CodableExtensions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CodableExtensions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"CodableExtensions::CodableExtensionsTests::Product" /* CodableExtensionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CodableExtensionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E46CB14E22A0E6580013D8B4 /* Codable+URLQueryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Codable+URLQueryItems.swift"; sourceTree = "<group>"; };
+		E414F0A322A8075400AD0F94 /* URLQueryItemEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryItemEncoder.swift; sourceTree = "<group>"; };
+		E414F0A622A808CF00AD0F94 /* Encodable+URLQueryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+URLQueryItems.swift"; sourceTree = "<group>"; };
+		E46CB14E22A0E6580013D8B4 /* Decodable+URLQueryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+URLQueryItems.swift"; sourceTree = "<group>"; };
 		OBJ_10 /* CodableDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDefaults.swift; sourceTree = "<group>"; };
 		OBJ_107 /* bin */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bin; sourceTree = SOURCE_ROOT; };
 		OBJ_108 /* Example */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Example; sourceTree = SOURCE_ROOT; };
@@ -213,10 +213,6 @@
 		OBJ_12 /* CodableTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTransformer.swift; sourceTree = "<group>"; };
 		OBJ_13 /* DecoderUpdatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecoderUpdatable.swift; sourceTree = "<group>"; };
 		OBJ_14 /* ReflectionCodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflectionCodable.swift; sourceTree = "<group>"; };
-		OBJ_16 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		OBJ_17 /* URLQueryItem+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLQueryItem+Codable.swift"; sourceTree = "<group>"; };
-		OBJ_18 /* URLQueryItemsDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryItemsDecoder.swift; sourceTree = "<group>"; };
-		OBJ_19 /* URLQueryItemsEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryItemsEncoder.swift; sourceTree = "<group>"; };
 		OBJ_21 /* CodableExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableExtensionsTests.swift; sourceTree = "<group>"; };
 		OBJ_23 /* CodableTestModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableTestModels.swift; sourceTree = "<group>"; };
 		OBJ_26 /* Package.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; name = Package.swift; path = /Users/brianstrobach/Appsaurus/Company/Projects/OpenSource/Swift/CodableExtensions/.build/checkouts/RuntimeExtensions/Package.swift; sourceTree = "<group>"; };
@@ -344,6 +340,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E414F0A522A808B600AD0F94 /* Codable+URLQueryItems */ = {
+			isa = PBXGroup;
+			children = (
+				E46CB14E22A0E6580013D8B4 /* Decodable+URLQueryItems.swift */,
+				E414F0A322A8075400AD0F94 /* URLQueryItemEncoder.swift */,
+				E414F0A622A808CF00AD0F94 /* Encodable+URLQueryItems.swift */,
+			);
+			path = "Codable+URLQueryItems";
+			sourceTree = "<group>";
+		};
 		OBJ_100 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,18 +362,6 @@
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		OBJ_15 /* URLQueryItems */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_16 /* Storage.swift */,
-				OBJ_17 /* URLQueryItem+Codable.swift */,
-				OBJ_18 /* URLQueryItemsDecoder.swift */,
-				OBJ_19 /* URLQueryItemsEncoder.swift */,
-				E46CB14E22A0E6580013D8B4 /* Codable+URLQueryItems.swift */,
-			);
-			path = URLQueryItems;
-			sourceTree = "<group>";
 		};
 		OBJ_20 /* Tests */ = {
 			isa = PBXGroup;
@@ -521,13 +515,13 @@
 		OBJ_7 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				E414F0A522A808B600AD0F94 /* Codable+URLQueryItems */,
 				OBJ_8 /* AnyCodableExtensions.swift */,
 				OBJ_10 /* CodableDefaults.swift */,
 				OBJ_11 /* CodableExtensions.swift */,
 				OBJ_12 /* CodableTransformer.swift */,
 				OBJ_13 /* DecoderUpdatable.swift */,
 				OBJ_14 /* ReflectionCodable.swift */,
-				OBJ_15 /* URLQueryItems */,
 			);
 			name = Sources;
 			path = Sources/Shared;
@@ -838,16 +832,14 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_145 /* AnyCodableExtensions.swift in Sources */,
-				E46CB14F22A0E6580013D8B4 /* Codable+URLQueryItems.swift in Sources */,
+				E46CB14F22A0E6580013D8B4 /* Decodable+URLQueryItems.swift in Sources */,
 				OBJ_147 /* CodableDefaults.swift in Sources */,
 				OBJ_148 /* CodableExtensions.swift in Sources */,
+				E414F0A422A8075400AD0F94 /* URLQueryItemEncoder.swift in Sources */,
 				OBJ_149 /* CodableTransformer.swift in Sources */,
 				OBJ_150 /* DecoderUpdatable.swift in Sources */,
+				E414F0A722A808CF00AD0F94 /* Encodable+URLQueryItems.swift in Sources */,
 				OBJ_151 /* ReflectionCodable.swift in Sources */,
-				OBJ_152 /* Storage.swift in Sources */,
-				OBJ_153 /* URLQueryItem+Codable.swift in Sources */,
-				OBJ_154 /* URLQueryItemsDecoder.swift in Sources */,
-				OBJ_155 /* URLQueryItemsEncoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
