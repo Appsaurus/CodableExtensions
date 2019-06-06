@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
 	name: "CodableExtensions",
+    platforms: [
+        .macOS(.v10_12), .iOS(.v10),
+    ],
 	products: [
 		.library(name: "CodableExtensions", targets: ["CodableExtensions"])
 	],
