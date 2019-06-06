@@ -130,7 +130,6 @@ class CodableExtensionsTests: BaseTestCase{
 
         let data = try model.encodeAsJSONData(including: derivedValues)
         let extendedTestModel = try ExtendedTestModel.decode(fromJSON: data)
-        let decodedModelDictionary: AnyDictionary = try data.decodeJSONAsDictionary()
 
 
         XCTAssertEqual(extendedTestModel.stringValue, model.stringValue)
@@ -155,6 +154,7 @@ class CodableExtensionsTests: BaseTestCase{
         XCTAssertEqual(extendedTestModel.callsiteInstantiatedModelCollectionKey, callsiteInstantiatedModelCollection)
 
 
+        //        let decodedModelDictionary: AnyDictionary = try data.decodeJSONAsDictionary()
         //        XCTAssertEqual(decodedModelDictionary[computedValueKey] as! String, model.computedValue)
         //        XCTAssertEqual(decodedModelDictionary[computedNestedModelKey] as! NestedTestModel, model.computedNestedModel)
         //        XCTAssertEqual(decodedModelDictionary[computedNestedModelCollectionKey] as! [NestedTestModel], model.computedNestedModelCollection)
