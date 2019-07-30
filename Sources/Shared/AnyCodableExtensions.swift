@@ -10,26 +10,26 @@ import Foundation
 import Codability
 
 //MARK: AnyCodable wrapping and unwrapping convenience
-extension Dictionary where Key == String {
+public extension Dictionary where Key == String {
 
-	public func anyCodableUnwrapped() -> [String : Any] {
+	func anyCodableUnwrapped() -> [String : Any] {
 		var dictionary: [String : Any] = [:]
 		for (key, value) in self{
-			dictionary[key] = AnyCodable.unwrapValue(value)
+			dictionary[key] = AnyCodable.unwrapAnyCodable(value)
 		}
 		return dictionary
 	}
 
-	public func toAnyCodableDictionary() throws -> AnyCodableDictionary {
+	func toAnyCodableDictionary() throws -> AnyCodableDictionary {
 		if let alreadyAnyCodable = self as? AnyCodableDictionary{
 			return alreadyAnyCodable
 		}
-		return self.mapValues({AnyCodable.wrap($0)})		
+		return self.mapValues({AnyCodable.wrapAnyCodable($0)})		
 	}
 }
 
-extension AnyCodable{
-	public static func unwrapValue(_ object: Any) -> Any {
+public extension AnyCodable{
+	static func unwrapAnyCodable(_ object: Any) -> Any {
 		if let anyCodable = object as? AnyCodable{
 			return anyCodable.value
 		}
@@ -37,18 +37,18 @@ extension AnyCodable{
 	}
 }
 
-extension Encodable{
-	public func toAnyCodableDictionary(encoder: JSONEncoder = .default, decoder: JSONDecoder = .default) throws -> AnyCodableDictionary{
+public extension Encodable{
+	func toAnyCodableDictionary(encoder: JSONEncoder = .default, decoder: JSONDecoder = .default) throws -> AnyCodableDictionary{
 		return try toAnyDictionary(encoder: encoder, decoder: decoder).toAnyCodableDictionary()
 	}
 
-	public func wrapAsAnyCodable() -> AnyCodable{
-		return AnyCodable.wrap(self)
+	func wrapAsAnyCodable() -> AnyCodable{
+		return AnyCodable.wrapAnyCodable(self)
 	}
 }
 
-extension AnyCodable{
-	public static func wrap(_ any: Any) -> AnyCodable{
+public extension AnyCodable{
+    static func wrapAnyCodable(_ any: Any) -> AnyCodable{
 		if let alreadyAnyCodable = any as? AnyCodable{
 			return alreadyAnyCodable
 		}

@@ -33,6 +33,7 @@
 /* Begin PBXBuildFile section */
 		E414F0A422A8075400AD0F94 /* URLQueryItemEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414F0A322A8075400AD0F94 /* URLQueryItemEncoder.swift */; };
 		E414F0A722A808CF00AD0F94 /* Encodable+URLQueryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414F0A622A808CF00AD0F94 /* Encodable+URLQueryItems.swift */; };
+		E414F0A922A81C3A00AD0F94 /* URL+QueryItemsDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E414F0A822A81C3A00AD0F94 /* URL+QueryItemsDecoding.swift */; };
 		E46CB14F22A0E6580013D8B4 /* Decodable+URLQueryItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = E46CB14E22A0E6580013D8B4 /* Decodable+URLQueryItems.swift */; };
 		OBJ_127 /* AnyCodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_93 /* AnyCodable.swift */; };
 		OBJ_128 /* GenericDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_94 /* GenericDecodingContainer.swift */; };
@@ -196,6 +197,7 @@
 		"CodableExtensions::CodableExtensionsTests::Product" /* CodableExtensionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CodableExtensionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E414F0A322A8075400AD0F94 /* URLQueryItemEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQueryItemEncoder.swift; sourceTree = "<group>"; };
 		E414F0A622A808CF00AD0F94 /* Encodable+URLQueryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+URLQueryItems.swift"; sourceTree = "<group>"; };
+		E414F0A822A81C3A00AD0F94 /* URL+QueryItemsDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+QueryItemsDecoding.swift"; sourceTree = "<group>"; };
 		E46CB14E22A0E6580013D8B4 /* Decodable+URLQueryItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+URLQueryItems.swift"; sourceTree = "<group>"; };
 		OBJ_10 /* CodableDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableDefaults.swift; sourceTree = "<group>"; };
 		OBJ_107 /* bin */ = {isa = PBXFileReference; lastKnownFileType = folder; path = bin; sourceTree = SOURCE_ROOT; };
@@ -346,6 +348,7 @@
 				E46CB14E22A0E6580013D8B4 /* Decodable+URLQueryItems.swift */,
 				E414F0A322A8075400AD0F94 /* URLQueryItemEncoder.swift */,
 				E414F0A622A808CF00AD0F94 /* Encodable+URLQueryItems.swift */,
+				E414F0A822A81C3A00AD0F94 /* URL+QueryItemsDecoding.swift */,
 			);
 			path = "Codable+URLQueryItems";
 			sourceTree = "<group>";
@@ -831,6 +834,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				E414F0A922A81C3A00AD0F94 /* URL+QueryItemsDecoding.swift in Sources */,
 				OBJ_145 /* AnyCodableExtensions.swift in Sources */,
 				E46CB14F22A0E6580013D8B4 /* Decodable+URLQueryItems.swift in Sources */,
 				OBJ_147 /* CodableDefaults.swift in Sources */,

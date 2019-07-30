@@ -130,7 +130,7 @@ class CodableExtensionsTests: BaseTestCase{
 
         let data = try model.encodeAsJSONData(including: derivedValues)
         let extendedTestModel = try ExtendedTestModel.decode(fromJSON: data)
-        let decodedModelDictionary: AnyDictionary = try data.decodeJSONAsDictionary()
+        let _ : AnyDictionary = try data.decodeJSONAsDictionary()
 
 
         XCTAssertEqual(extendedTestModel.stringValue, model.stringValue)
