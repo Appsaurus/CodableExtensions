@@ -21,7 +21,7 @@ extension Decodable {
     public static func decode(fromQueryItems queryItems: [URLQueryItem],
                               decoder: JSONDecoder = .default,
                               encoder: JSONEncoder = .default) throws -> Self {
-        var queryDict = queryItems.dictionary
+        let queryDict = queryItems.dictionary
         var dict: [String : Any] = [:]
         for prop in try properties(self) {
             guard let stringValue = queryDict[prop.name] else { continue }

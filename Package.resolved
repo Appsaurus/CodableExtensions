@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/wickwirew/Runtime",
         "state": {
           "branch": null,
-          "revision": "c167476b07fe8cc65fdf064076a4081c3269d14a",
-          "version": "2.1.0"
+          "revision": "61c9776f47d2951bdc562486ad348e5e1ca2e180",
+          "version": "2.1.1"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/Appsaurus/RuntimeExtensions",
         "state": {
           "branch": null,
-          "revision": "6a5645ca767d25b9fc1cf4897efdce1cb90b6b9a",
-          "version": "0.1.4"
+          "revision": "9aab33668d32ea39d999094ef336be04cc536d29",
+          "version": "0.1.5"
         }
       },
       {
