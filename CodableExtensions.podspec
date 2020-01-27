@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = "CodableExtensions"
   s.summary          = "A short description of CodableExtensions."
-  s.version          = "1.0.7"
+  s.version          = "1.0.8"
   s.homepage         = "github.com/Appsaurus/CodableExtensions"
   s.license          = 'MIT'
   s.author           = { "Brian Strobach" => "brian@appsaurus.io" }
