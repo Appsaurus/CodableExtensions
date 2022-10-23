@@ -11,21 +11,12 @@
         }
       },
       {
-        "package": "CRuntime",
-        "repositoryURL": "https://github.com/wickwirew/CRuntime.git",
-        "state": {
-          "branch": null,
-          "revision": "95f911318d8c885f6fc05e971471f94adfd39405",
-          "version": "2.1.2"
-        }
-      },
-      {
         "package": "Runtime",
         "repositoryURL": "https://github.com/wickwirew/Runtime",
         "state": {
           "branch": null,
-          "revision": "61c9776f47d2951bdc562486ad348e5e1ca2e180",
-          "version": "2.1.1"
+          "revision": "dad03135d7701a4e7b3a4051e75d6b37bd8e178e",
+          "version": "2.2.4"
         }
       },
       {
@@ -33,8 +24,8 @@
         "repositoryURL": "https://github.com/Appsaurus/RuntimeExtensions",
         "state": {
           "branch": null,
-          "revision": "f47b6e7e21e0fb5dc5785b77a1cac9a35dbe28e3",
-          "version": "0.1.6"
+          "revision": "37e2693e296f21c7c57610e11757eda3c50fda7f",
+          "version": "1.0.1"
         }
       },
       {
